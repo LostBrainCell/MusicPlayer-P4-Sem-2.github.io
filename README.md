@@ -1,2 +1,2 @@
-# MusicPlayer-P4-Sem-2.github.io
+# Music Player Goals
 CMP SC 30
