@@ -16,6 +16,8 @@ void settings() {
   int shorterSide = ( displayWidth > displayHeight ) ? displayHeight : displayWidth;
   shorterSide *= 0.9; //90% of the original
   size(shorterSide, shorterSide);
+  println();
+  println();
 }//End Settings
 //
 void setup() {
