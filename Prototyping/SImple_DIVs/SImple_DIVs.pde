@@ -1,7 +1,5 @@
 /* DIVs in Procedural VOICE
  
- 
- 
  */
 //
 //
@@ -12,24 +10,24 @@ int appWidth, appHeight;
 
 //
 void settings() {
-  println(displayWidth, displayHeight);
-  int shorterSide = ( displayWidth > displayHeight ) ? displayHeight : displayWidth;
-  shorterSide *= 0.9; //90% of the original
-  size(shorterSide, shorterSide);
-  println();
-  println();
+  //size( 1200, 800); //Width, Height
+  fullScreen();
+  appWidth = displayWidth; //Best Practice
+  appHeight = displayHeight; //
+  //
+  divs();
+  //
+  /* For a square shaped Screen
+   println(displayWidth, displayHeight);
+   int shorterSide = ( displayWidth > displayHeight ) ? displayHeight : displayWidth;
+   shorterSide *= 0.9; //90% of the original
+   size(shorterSide, shorterSide);
+   println("Display Questions", displayWidth, displayHeight, shorterSide);
+   println("CANVAS Size Key Variables for setup()", width, height);
+   */
 }//End Settings
 //
 void setup() {
-  int shorterSide = 1080;
-  //size(shorterSide, shorterSide);
-  /*
-
-   //size( 1200, 800); //Width, Height
-   fullScreen();
-   appWidth = displayWidth; //Best Practice
-   appHeight = displayHeight; //
-   */
 }//End Setup
 //
 void draw() {
