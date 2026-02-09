@@ -26,7 +26,7 @@ void divs() {
 //
 void rectDIV(float x, float y, float w, float h) {
   //DIVs: dividing out the CANVAS in non-overlapping sections
-  rect(x, y, w, h); //NullPointer Exception
+  rect(x, y, w, h); //NullPointer Exception happens if use void settings() {}
 }//End Rectangle Code
 //
 //End Subprogram DIVs
