@@ -23,6 +23,7 @@ void settings() {
  */
 //
 void setup() {
+  println( displayWidth, displayHeight);
   fullScreen();
   appWidth = displayWidth; //Best Practice
   appHeight = displayHeight; //
