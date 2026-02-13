@@ -23,7 +23,7 @@ void setup () {
   appHeight = displayHeight;
   musicPlayer = new MusicPlayer(16); //Error[NullPointerException
   musicPlayer.divsArray();
-  musicPlayer.RECT();
+ // musicPlayer.RECT();
   
   //musicPlayer.draw();
   //musicPlayer.errorStatement("hello world twin");
