@@ -35,12 +35,14 @@ class MusicPlayer {
     //
     divs[4] = divs[0] ; 
     divs[5] = divs[1] ; 
-    divs[6] = divs[4] * 0.2 ; 
-    divs[7] = divs[3] * .2 ; 
+    float Xrow = divs[2] / 10; 
+    float Yrow = divs[3] / 5.625;
+    divs[6] = Xrow * 0.2 ; 
+    divs[7] = Yrow * .2 ; 
 
     //DIVS for X Button
-    divs[8] = appWidth*.9;
-    divs[9] = appHeight*1;
+    divs[8] = appWidth-100;
+    divs[9] = 0;
     divs[10] = 100 ;
     divs[11] = divs[10];
 
