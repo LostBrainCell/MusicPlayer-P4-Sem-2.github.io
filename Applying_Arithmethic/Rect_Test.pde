@@ -15,13 +15,21 @@ class rectTest {
 
     //Variables for Rectangles Within the Music player UI
     //float ;
-    
-    
-    
+
+
+
     //Flow Chart Arithmethic
     int a = 4; //Place holder variable for now, work tomorrow
+    float Xrow = divs[2] / 10;
+    float Yrow = divs[3] / 5.625;
+    float button = Xrow + Yrow;
+    
+    
+    divs[a] = button ;
+    
+    
     //i++;
-    //divs[a] = ; // 
+    //divs[a] = ; //
 
 
     //RECT(divs[0], divs[1], divs[2], divs[3]); Shelf this for now
