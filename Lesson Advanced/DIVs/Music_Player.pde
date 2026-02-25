@@ -28,41 +28,55 @@ class MusicPlayer {
     //Note: Width=1920 pixels / Height=1080 pixel
     //
     // Music Player template
-    divs[0] = appWidth * 1 / 4; //How far the rect is from the edge of the full screen WIDTH wise
+    divs[0] = appWidth * 1 / 4 ; //How far the rect is from the edge of the full screen WIDTH wise
     divs[1] = appHeight * 1 / 4 ; //How far the rect i from the edge of fullScreen HEIGHT wise
     divs[2] = appWidth * 1/2 ; //Even for Width | x(width) of the inner screen
     divs[3] = appHeight* 1 / 2 ; //Odd for Height | y(height) of inner screen
+
+    float PlayerX = divs[0];
+    float PlayerY = divs[1];
     //
-    divs[4] = divs[0] ;
-    divs[5] = divs[1] ;
-    float Xrow = divs[2] / 10;
-    float Yrow = divs[3] / 5.625;
-    divs[6] = Xrow ;
-    divs[7] = Yrow ;
-
+    float Xrow = divs[2] / 10; //vertical Separater
+    float Yrow = divs[3] / 5.625; //Horizontal Separater
     //DIVS for X Button
-    divs[8] = appWidth-100;
-    divs[9] = 0;
-    divs[10] = 100 ;
-    divs[11] = divs[10];
-    
-    //Music Player button
-    divs[12] = 0;
-    divs[13] = appHeight - 100;
-    divs[14] = divs[10] ;
-    divs[15] = divs[10];
+    divs[4] = appWidth-100;
+    divs[5] = 0;
+    divs[6] = 100 ;
+    divs[7] = divs[10];
 
-    /*
-    divs[4] = ;
-     divs[5] = ;
-     divs[6] = ;
-     divs[7] = ;
-     
-     divs[8] = ;
-     divs[9] = ;
-     divs[10] = ;
-     divs[11] = ;
-     */
+    //Music Player button
+    divs[8] = 0;
+    divs[9] = appHeight - 100;
+    divs[10] = divs[10] ;
+    divs[11] = divs[10];
+
+    // Frame Music Image
+    //float Square = Xrow+Yrow;
+    divs[12] = PlayerX + Xrow;
+    divs[13] = PlayerY + Yrow/3;
+    divs[14] = Xrow*4;
+    divs[15] = Yrow*2;
+    //Music Buttons start
+    divs[16] = PlayerX + Xrow ;
+    divs[17] = PlayerY + 3*Yrow ;
+    divs[18] = Xrow ;
+    divs[19] = Yrow ;
+
+    divs[20] = PlayerX + 2*Xrow ;
+    divs[21] = PlayerY + 3*Yrow ;
+    divs[22] = Xrow ;
+    divs[23] = Yrow ;
+
+    divs[24] = PlayerX + 3*Xrow ;
+    divs[25] = PlayerY + 3*Yrow ;
+    divs[26] = Xrow ;
+    divs[27] = Yrow ;
+
+    divs[28] = PlayerX + 4*Xrow ;
+    divs[29] = PlayerY + 3*Yrow ;
+    divs[30] = Xrow ;
+    divs[31] = Yrow ;
+
     //END with for( int i=0, i  <divs.length; =i+=4 )
     //printArray(divs);
     //
