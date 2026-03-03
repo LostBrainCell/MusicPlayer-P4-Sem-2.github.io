@@ -29,6 +29,7 @@ class rectTest {
     float Xrow2 = Xrow*2;
     float Xrow3 = Xrow2+Xrow;
     float Xrow4 = Xrow3+Xrow;
+    float HalfRowX = Xrow/2;
     float YrowButtons = ImageY + Yrow;
     //
     //divs[a] = button ;
@@ -37,12 +38,18 @@ class rectTest {
       if ( a%4==0 && int (a/4)==0 ) {
         divs[a] = appWidth*1/4;
       } else if ( a%4==0 && int (a/4)==1 ) {
+        divs[a] = appWidth-Xrow;
         
       } else if ( a%4==0 && int (a/4)==2 ) {
+        
       } else if ( a%4==0 && int (a/4)==3 ) {
+        
       } else if ( a%4==0 && int (a/4)==0 ) {
+        
       } else if ( a%4==0 && int (a/4)==0 ) {
+        
       } else if ( a%4==0 && int (a/4)==0 ) {
+        
       }
     } // Work In Progress
 
