@@ -30,6 +30,7 @@ class rectTest {
     float Xrow3 = Xrow2+Xrow;
     float Xrow4 = Xrow3+Xrow;
     float HalfRowX = Xrow/2;
+    float HalfRowY = 
     float YrowButtons = ImageY + Yrow;
     //
     //divs[a] = button ;
@@ -39,25 +40,20 @@ class rectTest {
         divs[a] = appWidth*1/4;
       } else if ( a%4==0 && int (a/4)==1 ) {
         divs[a] = appWidth-Xrow;
-        
       } else if ( a%4==0 && int (a/4)==2 ) {
+        divs[a] = appWidth*0;
+      } else if ( a%4==0 && (int (a/4)==3 || int(a/4)==4) ) {
+        divs[a] = divs[0] + Xrow;  
+      } else if ( a%4==0 && int (a/4)==5 ) {
         
-      } else if ( a%4==0 && int (a/4)==3 ) {
+      } else if ( a%4==0 && int (a/4)==6 ) {
         
-      } else if ( a%4==0 && int (a/4)==0 ) {
-        
-      } else if ( a%4==0 && int (a/4)==0 ) {
-        
-      } else if ( a%4==0 && int (a/4)==0 ) {
+      } else if ( a%4==0 && int (a/4)==7 ) {
         
       }
     } // Work In Progress
-
-
     //i++;
     //divs[a] = ; //
-
-
     //RECT(divs[0], divs[1], divs[2], divs[3]); Shelf this for now
     //
     for ( int i=0; i<divs.length; i+=4 ) {

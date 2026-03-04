@@ -23,6 +23,7 @@ void setup () {
   appHeight = displayHeight;
   musicPlayer = new MusicPlayer(16); //Error[NullPointerException
   musicPlayer.divsArray();
+  musicPlayer.draw();
  // musicPlayer.RECT();
   
   //musicPlayer.draw();
