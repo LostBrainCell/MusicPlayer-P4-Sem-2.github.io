@@ -9,12 +9,12 @@ class MusicPlayer {
   }//End Constructor
   //
   MusicPlayer(int numberOfRectangles) {
-    this.divs = new float[numberOfRectangles*16];
-    //divs();
+    this.divs = new float[numberOfRectangles*4];
+    divs();
   }//End Constructor
   //
   void draw() {
-    ERRORCheck("Hello World");
+    //ERRORCheck("Hello World");
     seeMusicGUI();
   }//End Draw
   void mousePressed() {
@@ -29,21 +29,21 @@ class MusicPlayer {
     if ( mouseX>divs[num] && mouseX<divs[num]+divs[num+2] && mouseY>divs[num+1] && mouseY<divs[num+1]+divs[num+3] ) exit();
     num=8;
     if ( mouseX>divs[num] && mouseX<divs[num]+divs[num+2] && mouseY>divs[num+1] && mouseY<divs[num+1]+divs[num+3] ) musicGUI = varSwitch(musicGUI);
-  } //End Mouse Pressed
+  }// End Mouse Pressed
   void keyPressed() {
     //key=='CAP' || key=='LOWER' //Note" Caps Lock
     //key==CODED || keyCode==ESC //Special Keys
     if (key==CODED || keyCode==ESC) exit();
     if (key=='Q' || key=='q') exit();
     if (key=='M' || key=='m') musicGUI = varSwitch(musicGUI);
-  } //End Key Pressed
+  }//End Key Pressed
   Boolean varSwitch(Boolean variable) {
     if ( variable==true ) {
       return variable=false;
     } else {
       return variable=true;
     }
-  }
+  }//End Boolean Variable Switch
   //
   //Functions or Behaivours
   void divs() {
@@ -165,7 +165,8 @@ class MusicPlayer {
     for ( int j=4; j<9; j+=4 ) {
       rectDIV(divs[j], divs[j+1], divs[j+2], divs[j+3]);
     }
-  }//End See Music GUI
+  }//End See Quit & Music Button
+  //
   void seeMusicGUI() {
     int j=0;
     rectDIV(divs[j], divs[j+1], divs[j+2], divs[j+3]);
@@ -193,7 +194,10 @@ class MusicPlayer {
   } //END
   //
   //Getters
-  //musicGUI
+  Boolean musicPlayerGUI() {
+    return musicGUI;
+  }//End Music Player GUI
+  //
   //
   //Setters
   //

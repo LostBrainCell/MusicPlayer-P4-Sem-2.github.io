@@ -87,6 +87,16 @@ class MusicPlayer {
     divs[38] = divs[34];
     divs[39] = divs[35];
 
+    divs[40] = PlayerX + HalfRowX + Xrow/4 ;
+    divs[41] = PlayerY + divs[13] - Yrow/3 + Yrow/4 ;
+    divs[42] = Xrow/6 ;
+    divs[43] = Yrow/2 ;
+
+    divs[44] = divs[40] + Xrow/3;
+    divs[45] = PlayerY + divs[13] - Yrow/3 + Yrow/4;
+    divs[46] = Xrow/6 ;
+    divs[47] = Yrow/2 ;
+
     //END with for( int i=0, i  <divs.length; =i+=4 )
     //printArray(divs);
     //
