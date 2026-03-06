@@ -7,7 +7,7 @@ void setup () {
   fullScreen();
   appWidth = displayWidth;
   appHeight = displayHeight;
-  rect = new rectTest(16); //Error[NullPointerException
+  rect = new rectTest(64); //Error[NullPointerException
   rect.divsArraySETUP();
 
 }//END SETUP

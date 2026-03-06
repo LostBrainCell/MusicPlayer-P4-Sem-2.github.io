@@ -31,7 +31,7 @@ class rectTest {
     float Xrow4 = Xrow3+Xrow;
     float HalfRowX = Xrow/2;
     float HalfRowY = 
-    float YrowButtons = ImageY + Yrow;
+    //float YrowButtons = ImageY + Yrow;
     //
     //divs[a] = button ;
 
