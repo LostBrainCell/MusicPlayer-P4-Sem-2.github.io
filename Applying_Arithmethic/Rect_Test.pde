@@ -19,18 +19,19 @@ class rectTest {
     //int a = 4; //Place holder variable for now, work tomorrow
     float PlayerX = divs[0];
     float PlayerY = divs[1];
-    float Xrow = divs[2] / 10;
-    float Yrow = divs[3] / 5.625;
-    float button = Xrow + Yrow; //Temporary
+    float Xrow = divs[2] / 12;
+    float Yrow = divs[3] / 6.75;
+    float HalfRowX = Xrow/2;
+    float HalfRowY = Yrow/2;
+    //float button = Xrow + Yrow; //Temporary
     float ImageX = PlayerX + Xrow;
     float ImageY = PlayerY + Yrow;
-    float ImageW = 4*Xrow;
-    float ImageH = 3*Yrow;
+    float ImageW = 5*Xrow;
+    float ImageH = 2*Yrow + HalfRowY ;
     float Xrow2 = Xrow*2;
     float Xrow3 = Xrow2+Xrow;
     float Xrow4 = Xrow3+Xrow;
-    float HalfRowX = Xrow/2;
-    float HalfRowY = Yrow/2;
+
     //float YrowButtons = ImageY + Yrow;
     //
     //divs[a] = button ;
@@ -43,13 +44,10 @@ class rectTest {
       } else if ( a%4==0 && int (a/4)==2 ) {
         divs[a] = appWidth*0;
       } else if ( a%4==0 && (int (a/4)==3 || int(a/4)==4) ) {
-        divs[a] = divs[0] + Xrow;  
+        divs[a] = divs[0] + Xrow;
       } else if ( a%4==0 && int (a/4)==5 ) {
-        
       } else if ( a%4==0 && int (a/4)==6 ) {
-        
       } else if ( a%4==0 && int (a/4)==7 ) {
-        
       }
     } // Work In Progress
     //i++;

@@ -45,9 +45,9 @@ class MusicPlayer {
 
     //Music Player button
     divs[8] = 0;
-    divs[9] = appHeight - 100;
-    divs[10] = divs[10] ;
-    divs[11] = divs[10];
+    divs[9] = appHeight - Yrow;
+    divs[10] = Xrow ;
+    divs[11] = Yrow;
 
     // Frame Music Image
     //float Square = Xrow+Yrow;
@@ -91,20 +91,31 @@ class MusicPlayer {
     divs[41] = divs[37] + divs[15] + Yrow/2;
     divs[42] = divs[38];
     divs[43] = divs[39];
-    
+
     //end New Image points
 
     divs[44] = PlayerX + HalfRowX + Xrow/4 ;
     divs[45] = PlayerY + divs[13] - Yrow/3 + Yrow/4 ;
     divs[46] = Xrow/6 ;
     divs[47] = Yrow/2 ;
-    
+
     divs[48] = divs[44] + Xrow/3;
     divs[49] = PlayerY + divs[13] - Yrow/3 + Yrow/4;
     divs[50] = Xrow/6 ;
     divs[51] = Yrow/2 ;
 
     //END with for( int i=0, i  <divs.length; =i+=4 )
+
+
+    float x1 = divs[20];                      // Left vertex (base)
+    float y1 = divs[21];                      // Top-left vertex (base)
+    float x2 = divs[20] + divs[22];           // Right vertex (point)
+    float y2 = divs[21] + divs[23] / 2;       // Right vertex (point, vertically centered)
+    float x3 = divs[20];                      // Bottom-left vertex (base)
+    float y3 = divs[21] + divs[23];           // Bottom-left vertex (base)
+
+    // Draw the triangle
+    triangle(x1, y1, x2, y2, x3, y3);
     //printArray(divs);
     //
     //rectButton(divs[4], divs[5], divs[6], divs[7]);
