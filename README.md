@@ -9,6 +9,6 @@ CMP SC 30
 - [ ] Case Study
 - [ ] TBA
 
-DIVs In Advanced Lessons is main PDE file im working on
-
+Applying Arithmethic is the main PDE file im working on
+DIVs in Lessons Advanced is a reference for what I'm doing in Arithmethic
 ---
