@@ -39,7 +39,7 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
   if ( index==1 || index==2 || index==7 || index==8 ) {
     if ( index==1 || index==2 || index==7 || index==8 ) drawMusicDivs( divX, divY, divDimension ); // Squares inside buttons
     if ( index==7 || index==8 ) {
-      //float Node2x = divX + divDimension; 
+      //float Node2x = divX + divDimension;
       //divX = Node2x - divDimension*1/8;
       //divY = divY - divDimension*1/8;
       //divDimension = DimensionValue( divDimension );
@@ -65,6 +65,14 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
     divY = DimensionValue( divY, divDimension );
     divDimension = DimensionValue( divDimension );
     drawMusicDivs( divX, divY, divDimension );
+  }
+  //
+  if ( index==9 ) {
+    if ( index==9 ) WideTriangle( 9, divX, divY, divDimension);
+    if ( index==9 ) {
+      //place holder for half width triangles
+      
+    }
   }
   //
 }//
