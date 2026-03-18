@@ -39,18 +39,25 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
   if ( index==1 || index==2 || index==7 || index==8 ) {
     if ( index==1 || index==2 || index==7 || index==8 ) drawMusicDivs( divX, divY, divDimension ); // Squares inside buttons
     if ( index==7 || index==8 ) {
-      float Node2x = divX + divDimension;
-      divX = Node2x - divDimension*1/8;
-      divY = divY - divDimension*1/8;
-      divDimension = DimensionValue( divDimension );
+      //float Node2x = divX + divDimension; 
+      //divX = Node2x - divDimension*1/8;
+      //divY = divY - divDimension*1/8;
+      //divDimension = DimensionValue( divDimension );
+      //Note these move the inner Squares for some reason
     }
   }
+  //
   if ( index==2 ) drawLines( divX, divY, divDimension ); //Lines
+  // Pause Button Dimensions
   if ( index==4 ) {
-    divX = divDimension*1/3;
-    divY = divDimension*1/3;
-    divDimension = DimensionValue( divDimension*1/2 );
-    drawMusicDivs( divX, divY, divDimension );
+    if (index == 4) { // Pause Button
+      float rectWidth = divDimension/3;   // Narrow width for the vertical rectangles
+      float RectSpace = divX+rectWidth*2; // Spacing between the two rectangles
+      float rectHeight = divDimension;    // Full height of the button
+      rect(divX, divY, rectWidth, rectHeight);
+      // 2nd Vertical Rectangle
+      rect(RectSpace, divY, rectWidth, rectHeight);
+    }
   }
   if ( index==5 ) WideTriangle( 5, divX, divY, divDimension );
   if ( index==7 || index==8 ) {

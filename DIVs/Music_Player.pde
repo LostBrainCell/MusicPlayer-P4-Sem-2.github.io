@@ -92,8 +92,9 @@ class MusicPlayer {
     divs[42] = divs[38];
     divs[43] = divs[39];
 
-    //end New Image points
-
+    //End New Image points
+    
+    //Button pause shape
     divs[44] = PlayerX + HalfRowX + Xrow/4 ;
     divs[45] = PlayerY + divs[13] - Yrow/3 + Yrow/4 ;
     divs[46] = Xrow/6 ;
@@ -107,15 +108,15 @@ class MusicPlayer {
     //END with for( int i=0, i  <divs.length; =i+=4 )
 
 
-    float x1 = divs[20];                      // Left vertex (base)
-    float y1 = divs[21];                      // Top-left vertex (base)
-    float x2 = divs[20] + divs[22];           // Right vertex (point)
-    float y2 = divs[21] + divs[23] / 2;       // Right vertex (point, vertically centered)
-    float x3 = divs[20];                      // Bottom-left vertex (base)
-    float y3 = divs[21] + divs[23];           // Bottom-left vertex (base)
+//    float x1 = divs[20];                      // Left vertex (base)
+//    float y1 = divs[21];                      // Top-left vertex (base)
+//    float x2 = divs[20] + divs[22];           // Right vertex (point)
+//    float y2 = divs[21] + divs[23] / 2;       // Right vertex (point, vertically centered)
+//    float x3 = divs[20];                      // Bottom-left vertex (base)
+//    float y3 = divs[21] + divs[23];           // Bottom-left vertex (base)
 
-    // Draw the triangle
-    triangle(x1, y1, x2, y2, x3, y3);
+//    // Draw the triangle
+//    triangle(x1, y1, x2, y2, x3, y3);
     //printArray(divs);
     //
     //rectButton(divs[4], divs[5], divs[6], divs[7]);
