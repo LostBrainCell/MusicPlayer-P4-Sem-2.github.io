@@ -11,7 +11,7 @@ float[] musicButtonDivX = new float[numberOfButtons];
 //
 //
 void DivPOPULATION() {
-  buttonWidth = appWidth/13 ; // number of buttons in a row + 2xPadding
+  buttonWidth = appWidth/13 ; // number of buttons in a row + 2xPadding and the square itself
   buttonY = appHeight*3/5 ; //Most Buttons
   int randomButtonX = 0;
   randomButtonY = 0;
@@ -36,22 +36,36 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
   divY = divY + divDimension*1/4;
   divDimension = divDimension*1/2;
   //
-  if ( index==1 || index==2 || index==7 || index==8 ) drawMusicDivs( divX, divY, divDimension ); // Squares inside buttons
-  if ( index==2 ) drawLines( divX, divY, divDimension ); //Lines\
+  if ( index==1 || index==2 || index==7 || index==8 ) {
+    if ( index==1 || index==2 || index==7 || index==8 ) drawMusicDivs( divX, divY, divDimension ); // Squares inside buttons
+    if ( index==7 || index==8 ) {
+      float Node2x = divX + divDimension;
+      divX = Node2x - divDimension*1/8;
+      divY = divY - divDimension*1/8;
+      divDimension = DimensionValue( divDimension );
+    }
+  }
+  if ( index==2 ) drawLines( divX, divY, divDimension ); //Lines
+  if ( index==4 ) {
+    divX = divDimension*1/3;
+    divY = divDimension*1/3;
+    divDimension = DimensionValue( divDimension*1/2 );
+    drawMusicDivs( divX, divY, divDimension );
+  }
   if ( index==5 ) WideTriangle( 5, divX, divY, divDimension );
   if ( index==7 || index==8 ) {
-    divX = Dimension( divX, divDimension );
-    divY = Dimension( divY, divDimension );
-    divDimension = Dimension( divDimension );
+    divX = DimensionValue( divX, divDimension );
+    divY = DimensionValue( divY, divDimension );
+    divDimension = DimensionValue( divDimension );
     drawMusicDivs( divX, divY, divDimension );
   }
   //
 }//
-float Dimension( float divXY, float divDimension ) {
+float DimensionValue( float divXY, float divDimension ) {
   return divXY = divXY + divDimension*1/4;
 }//
 //
-float Dimension( float divDimension ) {
+float DimensionValue( float divDimension ) {
   return divDimension = divDimension*1/2;
 }//
 //
@@ -60,7 +74,8 @@ void drawLines( float divX, float divY, float divDimension ) {
   line( divX+divDimension, divY, divX, divY+divDimension ); //Line from top bottom left to top right
 }//
 void WideTriangle( int index, float divX, float divY, float divDimension ) {
-  triangle( divX, divY, divX+Dimension( divX ) ,Dimension( divX, divDimension ), divX, divY+Dimension( divY ) );
-  
-  
+  triangle( divX, divY, divX+divDimension, divY+DimensionValue( divDimension ), divX, divY+divDimension );
 }//
+//void smallTriangle ( int index, float divX, float divY, float divDimension ) {
+//  //triangle( divX, divY,
+//}//
