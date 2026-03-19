@@ -39,15 +39,17 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
   if ( index==1 || index==2 || index==7 || index==8 ) {
     if ( index==1 || index==2 || index==7 || index==8 ) drawMusicDivs( divX, divY, divDimension ); // Squares inside buttons
     if ( index==7 || index==8 ) {
-      //float Node2x = divX + divDimension;
-      //divX = Node2x - divDimension*1/8;
-      //divY = divY - divDimension*1/8;
-      //divDimension = DimensionValue( divDimension );
-      //Note these move the inner Squares for some reason
+      WideTriangle( 9, divX+SmallerDimensionValue( divDimension*7/4 ), divY-divDimension*1/8, divDimension/4);
     }
   }
   //
   if ( index==2 ) drawLines( divX, divY, divDimension ); //Lines
+  //
+  if ( index==3 ) { //Rectangle
+    float rectWidth = divDimension/4;   // Narrow width for the vertical rectangles
+    float rectHeight = divDimension;    // Full height of the button
+    rect(divX, divY, rectWidth, rectHeight);
+  }//
   // Pause Button Dimensions
   if ( index==4 ) {
     if (index == 4) { // Pause Button
@@ -61,26 +63,28 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
   }
   if ( index==5 ) WideTriangle( 5, divX, divY, divDimension );
   if ( index==7 || index==8 ) {
-    divX = DimensionValue( divX, divDimension );
-    divY = DimensionValue( divY, divDimension );
-    divDimension = DimensionValue( divDimension );
+    divX = SmallerDimensionValue( divX, divDimension );
+    divY = SmallerDimensionValue( divY, divDimension );
+    divDimension = SmallerDimensionValue( divDimension );
     drawMusicDivs( divX, divY, divDimension );
   }
   //
-  if ( index==9 ) {
-    if ( index==9 ) WideTriangle( 9, divX, divY, divDimension);
+  if ( index==9 ) { // triangles facing left
     if ( index==9 ) {
-      //place holder for half width triangles
-      
+      divX = divX+divDimension/4 + SmallerDimensionValue( divDimension/2 );
+      HalvedWidthTriangleLeft ( 9, divX, divY, divDimension );
+      HalvedWidthTriangleLeft ( 9, divX+SmallerDimensionValue( divDimension*3/2 ), divY, divDimension );
+      //divDimension = divDimension-SmallerDimensionValue( divDimension ); only makes the triangle size smaller, not narrower
+      //place holder for small triangles in the loop button
     }
   }
   //
 }//
-float DimensionValue( float divXY, float divDimension ) {
+float SmallerDimensionValue( float divXY, float divDimension ) {
   return divXY = divXY + divDimension*1/4;
 }//
 //
-float DimensionValue( float divDimension ) {
+float SmallerDimensionValue( float divDimension ) {
   return divDimension = divDimension*1/2;
 }//
 //
@@ -89,7 +93,10 @@ void drawLines( float divX, float divY, float divDimension ) {
   line( divX+divDimension, divY, divX, divY+divDimension ); //Line from top bottom left to top right
 }//
 void WideTriangle( int index, float divX, float divY, float divDimension ) {
-  triangle( divX, divY, divX+divDimension, divY+DimensionValue( divDimension ), divX, divY+divDimension );
+  triangle( divX, divY, divX+divDimension, divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension );
+}//
+void HalvedWidthTriangleLeft( int index, float divX, float divY, float divDimension ) {
+  triangle( divX, divY, divX-SmallerDimensionValue( divDimension/2 ), divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension ); // divX-divDimension to make triangles face left
 }//
 //void smallTriangle ( int index, float divX, float divY, float divDimension ) {
 //  //triangle( divX, divY,
