@@ -62,6 +62,10 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
     }
   }
   if ( index==5 ) WideTriangle( 5, divX, divY, divDimension );
+  if ( index==6 ) {
+  
+  
+  }///
   if ( index==7 || index==8 ) {
     divX = SmallerDimensionValue( divX, divDimension );
     divY = SmallerDimensionValue( divY, divDimension );

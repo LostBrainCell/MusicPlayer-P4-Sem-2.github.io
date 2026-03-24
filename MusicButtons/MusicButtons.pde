@@ -20,9 +20,9 @@ void setup() {
   // Button Symbols
   musicSymbol( 1, musicButtonDivX[1], buttonY, buttonWidth ); //1,2,7,8 creates square inside the button
   musicSymbol( 2, musicButtonDivX[2], buttonY, buttonWidth ); //Lines
-  musicSymbol( 3, musicButtonDivX[3], buttonY, buttonWidth ); //
-  musicSymbol( 9, musicButtonDivX[3], buttonY, buttonWidth ); //Small Triangles in Loop
-  musicSymbol( 10, musicButtonDivX[4], buttonY, buttonWidth ); //Small Triangles in Loop
+  musicSymbol( 3, musicButtonDivX[3], buttonY, buttonWidth ); // Vertical Rectangle //Line 23-24 is for Previous Button
+  musicSymbol( 9, musicButtonDivX[3], buttonY, buttonWidth ); // HalfWidth Triangles facing left
+  musicSymbol( 6, musicButtonDivX[4], buttonY, buttonWidth ); // Rewind Button
   musicSymbol( 4, musicButtonDivX[5], buttonY, buttonWidth ); // Pause Button
   musicSymbol( 5, musicButtonDivX[6], buttonY, buttonWidth ); //5=Create Triangle
   musicSymbol( 7, musicButtonDivX[7], buttonY, buttonWidth ); //LOOP BUTTON
