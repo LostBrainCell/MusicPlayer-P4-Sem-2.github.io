@@ -2,7 +2,6 @@
 int appWidth, appHeight;
 import java.io.File;
 
-
 //
 void setup() {
   //fullScreen();
@@ -12,6 +11,7 @@ void setup() {
   //FileLoader
   //
   LoadFile();
+  //
   
   
   
