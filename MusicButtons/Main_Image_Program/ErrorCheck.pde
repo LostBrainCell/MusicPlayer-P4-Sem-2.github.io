@@ -1,3 +1,7 @@
+//
+//
+//
+//
 void ErrorCheck(String statement) {
   println(statement);
 }
@@ -29,3 +33,4 @@ void ErrorCheck(String statement, float var1, float var2) {
 void ErrorCheck(String statement, float[] array) {
   println("\n" + statement);
   printArray(array);
+}

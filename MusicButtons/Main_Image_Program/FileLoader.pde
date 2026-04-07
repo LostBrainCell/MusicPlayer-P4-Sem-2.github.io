@@ -4,10 +4,10 @@
  This is for void Setup in main Program
  
  */
-int ImagesCount = 0;
-int CurrentFile = ImagesCount - ImagesCount;
+int FileCount = 0;
+int CurrentFile = FileCount - FileCount;
 //
-PImage[] imagesPlaylist;
+PImage[] imagesPlayList;
 //
 void LoadFile() {
   String Close = "..";
@@ -16,13 +16,13 @@ void LoadFile() {
   String ImagesFolder = "Images";
   String ImagesFolderSource = sketchPath( Close + Close + Open + DependanciesFolder + Open + ImagesFolder );
   println("Images folder path: " + ImagesFolderSource);
-
+  //
   FileCheck(ImagesFolderSource);
 }//
 void FileCheck( String Source ) {
-  File LocalFiles  = new File(Source);
+  File LocalFile  = new File(Source);
   //
-  File[] fileNames = LocalFiles.listFiles();
+  File[] fileNames = LocalFile.listFiles();
   //
   String[] files = new String[fileNames.length];
   int i= 0;
@@ -34,22 +34,22 @@ void FileCheck( String Source ) {
       i++; //iteration necessary here, not in regular FOR
     }
   } else {
-    ErrorCheck("See FileCheck");
+    ErrorCheck("SeeFileCheck (String pathway), fileNames==NULL");
   }
   //First Time Only
-  if (ImagesCount==0) {
-    ImagesCount = files.length; //Global Used for both music and images, populated once.
+  if (FileCount==0) {
+    FileCount = files.length; //Global Used for both music and images, populated once.
     ImagesLoader( files );
   }
 }//
 //
 void ImagesLoader(String[] files) {
-  imagesPlayList = new PImage[ImagesCount]; //sets the array length
+  imagesPlayList = new PImage[FileCount]; //sets the array length
   int fileNumber=0;
-  while ( fileNumber < ImagesCount ) {
+  while ( fileNumber < FileCount ) {
     imagesPlayList[ fileNumber ] = loadImage( files[ fileNumber ] );
     //ErrorCheck("Verifying Width & Height of Loaded Images, see imageLoading() in File Loading", imagesPlayList[fileNumber].width, imagesPlayList[fileNumber].height );
     fileNumber++; //functions similar to FOR
   }
   checkLoadImage(); //See Image
-}
+}//
