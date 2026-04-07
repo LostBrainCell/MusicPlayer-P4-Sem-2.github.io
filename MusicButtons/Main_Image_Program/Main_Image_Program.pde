@@ -1,10 +1,12 @@
 //Global Variables
-int appWidth, appHeight;
-import java.io.File;
 
+import java.io.File;
+//
+int appWidth, appHeight;
+//Boolean
 //
 void setup() {
-  //fullScreen();
+  fullScreen();
   appWidth = displayWidth;
   appHeight = displayHeight;
   //
@@ -22,9 +24,6 @@ void setup() {
 void draw() {
   //
   //Image Loader
-  
-  
-  
 }//END DRAW  note
 //
 void keyPressed() {

@@ -7,6 +7,8 @@
 int ImagesCount = 0;
 int CurrentFile = ImagesCount - ImagesCount;
 //
+PImage[] imagesPlaylist;
+//
 void LoadFile() {
   String Close = "..";
   String Open = "/";
@@ -21,6 +23,7 @@ void FileCheck( String Source ) {
   File LocalFiles  = new File(Source);
   //
   File[] fileNames = LocalFiles.listFiles();
+  //
   String[] files = new String[fileNames.length];
   int i= 0;
   //
@@ -30,6 +33,8 @@ void FileCheck( String Source ) {
       //Note: getName() is built in code
       i++; //iteration necessary here, not in regular FOR
     }
+  } else {
+    ErrorCheck("See FileCheck");
   }
   //First Time Only
   if (ImagesCount==0) {
@@ -39,9 +44,9 @@ void FileCheck( String Source ) {
 }//
 //
 void ImagesLoader(String[] files) {
-  imagesPlayList = new PImage[numberOfFiles]; //sets the array length
+  imagesPlayList = new PImage[ImagesCount]; //sets the array length
   int fileNumber=0;
-  while ( fileNumber < numberOfFiles ) {
+  while ( fileNumber < ImagesCount ) {
     imagesPlayList[ fileNumber ] = loadImage( files[ fileNumber ] );
     //ErrorCheck("Verifying Width & Height of Loaded Images, see imageLoading() in File Loading", imagesPlayList[fileNumber].width, imagesPlayList[fileNumber].height );
     fileNumber++; //functions similar to FOR
