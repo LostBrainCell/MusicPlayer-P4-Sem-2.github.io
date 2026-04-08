@@ -24,7 +24,7 @@ void FileCheck( String Source ) {
   //
   File[] fileNames = LocalFile.listFiles();
   //
-  String[] files = new String[fileNames.length];
+    String[] files = new String[fileNames.length];
   int i= 0;
   //
   if ( fileNames != null ) {
@@ -53,3 +53,37 @@ void ImagesLoader(String[] files) {
   }
   checkLoadImage(); //See Image
 }//
+//// 
+//Buttons
+int checkNum (int i) {
+  if ( i >= FileCount ) {
+    CurrentFile = 0;
+  } else if ( i <= -1 ) {
+    i = 0;
+  }
+  return i;
+}
+int loopVar( int i ) {
+  if ( i < FileCount ) {
+    i++;
+  } else if ( i == FileCount ) {
+    CurrentFile = 0;
+  } else if ( i == -1 ) {
+    i = 0;
+  }
+  checkNum (i);
+  return i;
+}//End Next
+int loopVar( int i, int total ) {
+  if ( i < total ) {
+    i++;
+  } else if ( i == total ) {
+    CurrentFile = 0;
+  } else if ( i == -1 ) {
+    i = 0;
+  }
+  checkNum (i);
+  return i;
+}//End Next
+//
+//End Next

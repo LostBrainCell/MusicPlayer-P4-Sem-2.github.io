@@ -54,7 +54,7 @@ void keyPressed() {
   if (key=='Q' || key=='q') exit();
   if (key=='M' || key=='m') musicGUI = varSwitch(musicGUI);
   if (key=='N' || key=='n') CurrentFile = loopVar( CurrentFile ); //See Buttons
-  checkNum (currentFile);
+  checkNum (CurrentFile);
 } //End Key Pressed
 Boolean varSwitch(Boolean variable) {
   if ( variable==true ) {
