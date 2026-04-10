@@ -14,7 +14,7 @@ void LoadFile() {
   String Open = "/";
   String DependanciesFolder = "Dependancies";
   String ImagesFolder = "Images";
-  String ImagesFolderSource = sketchPath( Close + Close + Open + DependanciesFolder + Open + ImagesFolder );
+  String ImagesFolderSource = sketchPath( Close + Close + DependanciesFolder + Open + ImagesFolder );
   println("Images folder path: " + ImagesFolderSource);
   //
   FileCheck(ImagesFolderSource);

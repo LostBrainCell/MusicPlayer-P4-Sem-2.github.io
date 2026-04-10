@@ -10,9 +10,9 @@ void setup() {
   appWidth = displayWidth;
   appHeight = displayHeight;
   //
+  LoadFile();
   divs();
   //
-  LoadFile();
   //
 
   //
