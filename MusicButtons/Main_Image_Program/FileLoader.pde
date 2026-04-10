@@ -23,6 +23,12 @@ void FileCheck( String Source ) {
   File LocalFile  = new File(Source);
   //
   File[] fileNames = LocalFile.listFiles();
+  // AI code
+  if (fileNames == null) {
+    println("Error: LocalFile.listFiles() returned null. Directory may not exist or is inaccessible.");
+    return;
+  }
+  // Fixed crashing from NullPointerException (Code from AI)
   //
   String[] files = new String[fileNames.length];
   int i= 0;
@@ -33,8 +39,6 @@ void FileCheck( String Source ) {
       //Note: getName() is built in code
       i++; //iteration necessary here, not in regular FOR
     }
-  } else {
-    ErrorCheck("SeeFileCheck (String pathway), fileNames==NULL");
   }
   //First Time Only
   if (FileCount==0) {
@@ -54,36 +58,5 @@ void ImagesLoader(String[] files) {
   checkLoadImage(); //See Image
 }//
 ////
-//Buttons
-int checkNum (int i) {
-  if ( i >= FileCount ) {
-    CurrentFile = 0;
-  } else if ( i <= -1 ) {
-    i = 0;
-  }
-  return i;
-}
-int loopVar( int i ) {
-  if ( i < FileCount ) {
-    i++;
-  } else if ( i == FileCount ) {
-    CurrentFile = 0;
-  } else if ( i == -1 ) {
-    i = 0;
-  }
-  checkNum (i);
-  return i;
-}//End Next
-int loopVar( int i, int total ) {
-  if ( i < total ) {
-    i++;
-  } else if ( i == total ) {
-    CurrentFile = 0;
-  } else if ( i == -1 ) {
-    i = 0;
-  }
-  checkNum (i);
-  return i;
-}//End Next
 //
 //End Next
