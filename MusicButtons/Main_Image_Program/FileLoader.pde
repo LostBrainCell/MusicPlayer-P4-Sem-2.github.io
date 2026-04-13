@@ -8,14 +8,22 @@ int CurrentFile = FileCount - FileCount;
 PImage[] imagesPlayList;
 //
 void LoadFile() {
-  String Close = "..";
-  String Open = "/";
+  String Close = ".."; //Exit out of current folder
+  String Open = "/"; //Needed for every action
   String DependanciesFolder = "Dependancies";
   String ImagesFolder = "Images";
   String ImagesFolderPath = sketchPath( Close + Open + Close + Open + DependanciesFolder + Open + ImagesFolder + Open); //Note NULLPOINTEREXCEPTION IF no "/" added
   println("Images folder path: " + ImagesFolderPath);
   //
   FileCheck(ImagesFolderPath);
+  //Music Folder Path
+  //String MusicFolder = "Downloaded Music";
+  //String OldMusicFolder = "OldMusic";
+  //String MusicFolderPath = sketchPath( Close + Open + Close + Open + DependanciesFolder + Open + MusicFolder + Open );
+  //String OldMusicFolderPath = sketchPath( Close + Open + Close + Open + DependanciesFolder + Open + OldMusicFolder + Open );
+  ////
+  //FileCheck(MusicFolderPath);
+  //FileCheck(OldMusicFolderPath);
 }//
 void FileCheck( String Source ) {
   File LocalFile  = new File(Source);
@@ -55,4 +63,3 @@ void ImagesLoader(String[] files) {
 }//
 ////
 //
-//End Next
