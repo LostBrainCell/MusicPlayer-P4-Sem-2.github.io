@@ -13,9 +13,6 @@ void setup() {
   LoadFile();
   divs();
   //
-  //
-
-  //
 }//END SETUP
 //
 void draw() {

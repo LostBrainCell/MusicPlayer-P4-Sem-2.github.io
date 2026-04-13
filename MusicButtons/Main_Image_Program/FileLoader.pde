@@ -1,8 +1,6 @@
 //Global Variables
 /*
-
  This is for void Setup in main Program
- 
  */
 int FileCount = 0;
 int CurrentFile = FileCount - FileCount;
@@ -14,23 +12,19 @@ void LoadFile() {
   String Open = "/";
   String DependanciesFolder = "Dependancies";
   String ImagesFolder = "Images";
-  String ImagesFolderSource = sketchPath( Close + Close + DependanciesFolder + Open + ImagesFolder );
-  println("Images folder path: " + ImagesFolderSource);
+  String ImagesFolderPath = sketchPath( Close + Open + Close + Open + DependanciesFolder + Open + ImagesFolder + Open); //Note NULLPOINTEREXCEPTION IF no "/" added
+  println("Images folder path: " + ImagesFolderPath);
   //
-  FileCheck(ImagesFolderSource);
+  FileCheck(ImagesFolderPath);
 }//
 void FileCheck( String Source ) {
   File LocalFile  = new File(Source);
   //
   File[] fileNames = LocalFile.listFiles();
   // AI code
-  if (fileNames == null) {
-    println("Error: LocalFile.listFiles() returned null. Directory may not exist or is inaccessible.");
-    return;
-  }
   // Fixed crashing from NullPointerException (Code from AI)
   //
-  String[] files = new String[fileNames.length];
+  String[] files = new String[fileNames.length]; //Null Pointer Exception
   int i= 0;
   //
   if ( fileNames != null ) {
@@ -39,6 +33,8 @@ void FileCheck( String Source ) {
       //Note: getName() is built in code
       i++; //iteration necessary here, not in regular FOR
     }
+  } else {
+    ErrorCheck("See fileReaeding(String pathway), fileNames==NULL");
   }
   //First Time Only
   if (FileCount==0) {

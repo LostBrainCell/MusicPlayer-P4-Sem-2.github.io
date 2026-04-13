@@ -1,7 +1,7 @@
 //
-
-
-
+//
+//
+//
 void rectDIV(float x, float y, float w, float h) {
   //DIVs: dividing out the CANVAS in non-overlapping sections
   rect(x, y, w, h);
