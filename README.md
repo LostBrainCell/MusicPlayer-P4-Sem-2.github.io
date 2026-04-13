@@ -8,7 +8,8 @@ CMP SC 30
 - [X] Bring old music player
 - [X] Case Study
 - [X] DIVs is the main PDE file im working on and DIVs is a reference for what I'm doing in Arithmethic (Rectangles)
-- [ ] Image Program (WIP)
+- [X] Image Program (WIP)
+- [ ] Text Review (Turn DIVs into Text boxes)
 
 
 ---
