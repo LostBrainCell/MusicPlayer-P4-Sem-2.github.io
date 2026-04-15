@@ -28,6 +28,7 @@ void draw() {
   }
   seeQuitMusicButton();
   //
+  FontSize();
 } //End draw
 //
 void mousePressed() {
