@@ -63,6 +63,7 @@ font = createFont(Calibri, fontSize1);
 float fontSizeHarrington = 86; //Default fontSize for ~100%
 float divHeightHarrington = songTitleDivHeight; //Key:Value, value=120
 float harringtonAspectRatio = fontSizeHarrington / divHeightHarrington; //#<1
+//
 fontSize1 = songTitleDivHeight * harringtonAspectRatio; 
 fontSize2 = messageDIV_Height* harringtonAspectRatio; 
 fontSize3 = quitHeight * harringtonAspectRatio; 
@@ -74,7 +75,7 @@ color resetInk = whiteInk;
 fill(BlueInk); //Ink, hexidecimal copied from Color Selector
 //Grey Scale 0-255
 //While() {} program tomorrow thursday
-textAlign(CENTER, CENTER ); 
+textAlign(CENTER, BOTTOM ); 
 //
 float constantDecrease= 0.99;
 int iWhile=0;
@@ -93,7 +94,6 @@ text( title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight
 textFont(font, fontSize2); //must include textSize() before text() & textWidth()
 iWhile=0;
 while ( textWidth(title) > messageDIV_Width ) {
-  
   iWhile++;
   if ( iWhile>1000 ) {
     println("Infninte WHILE Loop");

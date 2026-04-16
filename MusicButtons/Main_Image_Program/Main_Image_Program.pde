@@ -10,6 +10,7 @@ void setup() {
   appWidth = displayWidth;
   appHeight = displayHeight;
   //
+  FontSetup();
   LoadFile();
   divs();
   //
@@ -28,7 +29,6 @@ void draw() {
   }
   seeQuitMusicButton();
   //
-  FontSize();
 } //End draw
 //
 void mousePressed() {
