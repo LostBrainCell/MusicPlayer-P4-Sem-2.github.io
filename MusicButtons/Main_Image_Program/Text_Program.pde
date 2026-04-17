@@ -9,7 +9,6 @@ void DrawingText( PFont f, float fs, String string, color ink, float x, float y,
   //
   textAlign( xAlign, yAlign );
   //
-
   textFont( f, fs );
   text( string, x, y, w, h );
   fill( resetink );
@@ -24,17 +23,21 @@ void FontSetup() {
   //float fontSizeCalibri = 86; //Default fontSize for ~100%
   //  float divHeightCalibri= ; //Key:Value, value=120
   //  float harringtonAspectRatio = fontSizeHarrington / divHeightHarrington; //#<1
+  loopFontSize(fontSize);
+  
+  
+  
 }//
 void FontSize() {
   float[] fontSize = new float[6];
   printArray(fontSize);
-  int i=0;
-  for ( float size : fontSize ) {
-    size = appHeight;
-    fontSize[i] = size;
-    println( "size is", size);
-    i++;
-  }// do this if one wants to keep a For-Each loop
+  loopFontSize(fontSize);
   printArray(fontSize);
 }//
-// void loopFontSize() {}//
+void loopFontSize(float[] fontSize ) {
+  for ( int i=0; i<fontSize.length; ) {
+    fontSize[i] = appHeight;
+    println( "size is", fontSize[i]);
+    i++;
+  }//
+}//

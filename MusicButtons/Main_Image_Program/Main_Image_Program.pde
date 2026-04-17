@@ -10,9 +10,9 @@ void setup() {
   appWidth = displayWidth;
   appHeight = displayHeight;
   //
-  FontSetup();
-  LoadFile();
   divs();
+  LoadFile();
+  FontSetup();
   //
 }//END SETUP
 //
