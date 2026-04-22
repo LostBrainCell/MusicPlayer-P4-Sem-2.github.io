@@ -56,31 +56,33 @@ void setup() {
   String Path = OldMusicDirectory + songName1 + MP3;
   playList[ currentSong ] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
-  Path = SoundEffectsDirectory + soundEffect1 + MP3; //Rewritting FILE 
-  soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  Path = SoundEffectsDirectory + soundEffect1 + MP3; //Rewritting FILE
+  soundEffects[currentSong] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //
   //ErrorCheck
-  if  ( playList[currentSong]==null ) {
+  if  ( playList[currentSong]==null || soundEffects[numberOfSoundEffects] ) {
     println("PlayList is not loaded");
     printArray(playList);
     //printArray for Sound Effects
   } else {
-    playList[currentSong].play();
-    printArray(playList);
-    //Note: Music/Sound Effects only play with |void setup()| and |void draw()| are in the code
+    //playList[currentSong].play();
+    //printArray(playList);
+    ////Note: Music/Sound Effects only play with |void setup()| and |void draw()| are in the code
   }//
+  inspectmetadata( playListMetaData[currentSong] );
 }//
 //
-void draw() {}//
+void draw() {
+}//
 //
 void mousePressed() {
 } //End Mouse Pressed
 //
 void keyPressed() {
   /* Simple Play
-  playList[currentSong].play(); //BasicPlay
-  currentSong++; //Basic Next Song
-  */
+   playList[currentSong].play(); //BasicPlay
+   currentSong++; //Basic Next Song
+   */
   //
   /* Key Board Short Cuts ... learning what the Music Buttons could be
    Note: CAP Lock with ||
@@ -189,7 +191,7 @@ void keyPressed() {
     }
   }
   if ( key=='B' || key=='b' ) {
-    playList[currentSong].isPlaying(); 
+    playList[currentSong].isPlaying();
   } // Previous, Back //Students to finish
   //
   if ( key=='Y' || key=='y' ) currentSong = int(random(0, numberOfSongs)); //random(0, numberOfSongs)
