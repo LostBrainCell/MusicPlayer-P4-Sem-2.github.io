@@ -31,6 +31,7 @@ int numberOfSongs = 1; //Best Practice
 int numberOfSoundEffects = 1; //Best Practice
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
+AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
 int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //
 //Display
@@ -44,18 +45,19 @@ void setup() {
   String open = "../" ;
   //String Seperator = "/" ; // "../" is mandotory to prevent Null
   String OldMusicFolder = "OldMusic/"; //Developer Specific
-  //String soundEffectsFolder = "Sound Effects/"; //Don't have sound effects
+  String SoundEffectsFolder = "SoundEffects/"; //Don't have sound effects
   String Dependancies = "Dependancies/"; //Developer Specific
   String songName1 = "groove";
-  //String soundEffect1 = "Car_Door_Closing";
+  String soundEffect1 = "Car_Door_Closing";
   String MP3 = ".mp3";
   //
   String OldMusicDirectory = open + Dependancies + OldMusicFolder;
-  //String SoundEffects //Note don't have one
+  String SoundEffectsDirectory = open + Dependancies + SoundEffectsFolder;
   String Path = OldMusicDirectory + songName1 + MP3;
   playList[ currentSong ] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-  //file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE //Note: Don't have Sound Effects
-  //soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
+  Path = SoundEffectsDirectory + soundEffect1 + MP3; //Rewritting FILE 
+  soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //
   //ErrorCheck
   if  ( playList[currentSong]==null ) {
