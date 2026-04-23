@@ -26,6 +26,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
 //Global Varaibles
+int appHeight, appWidth;
 Minim minim; //initates entire class
 int numberOfSongs = 1; //Best Practice
 int numberOfSoundEffects = 1; //Best Practice
@@ -37,8 +38,8 @@ int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //Display
 void setup() {
   size( 700, 500 );
-  int appWidth = width;
-  int appHeight = height;
+   appWidth = width;
+   appHeight = height;
   //
   //
   minim = new Minim(this);
@@ -60,7 +61,7 @@ void setup() {
   soundEffects[currentSong] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //
   //ErrorCheck
-  if  ( playList[currentSong]==null || soundEffects[numberOfSoundEffects] ) {
+  if  ( playList[currentSong]==null ) {
     println("PlayList is not loaded");
     printArray(playList);
     //printArray for Sound Effects
@@ -69,10 +70,11 @@ void setup() {
     //printArray(playList);
     ////Note: Music/Sound Effects only play with |void setup()| and |void draw()| are in the code
   }//
-  inspectmetadata( playListMetaData[currentSong] );
+  inspectmetadata( playListMetaData );
 }//
 //
 void draw() {
+  //textdraw();
 }//
 //
 void mousePressed() {
