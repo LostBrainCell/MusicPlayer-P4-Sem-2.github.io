@@ -50,9 +50,9 @@ String title = "Testing Text";
 // Students enter all text from Case Study
 //
 // Fonts from OS
-float fontSize1 = appHeight; //Entire Program, Algorithm to have smallest font size
-float fontSize2 = appHeight; 
-float fontSize3 = appHeight; 
+float fontSize1 = songTitleDivHeight; //Entire Program, Algorithm to have smallest font size
+float fontSize2 = messageDIV_Height; 
+float fontSize3 = quitHeight; 
 PFont font; //Font Varaible Name, able to have more than one Font
 String Calibri = "Calibri Bold"; //Spelling of the Font Matters, see PFont.list() v Create Font above
 font = createFont(Calibri, fontSize1);
@@ -60,13 +60,13 @@ font = createFont(Calibri, fontSize1);
 //font = createFont(Calibri, fontSize3);
 //
 // Aspect Ratio for Harrington
-float fontSizeHarrington = 86; //Default fontSize for ~100%
-float divHeightHarrington = songTitleDivHeight; //Key:Value, value=120
-float harringtonAspectRatio = fontSizeHarrington / divHeightHarrington; //#<1
-//
-fontSize1 = songTitleDivHeight * harringtonAspectRatio; 
-fontSize2 = messageDIV_Height* harringtonAspectRatio; 
-fontSize3 = quitHeight * harringtonAspectRatio; 
+//float fontSizeHarrington = 86; //Default fontSize for ~100%
+//float divHeightHarrington = songTitleDivHeight; //Key:Value, value=120
+////float harringtonAspectRatio = fontSizeHarrington / divHeightHarrington; //#<1
+////
+//fontSize1 = songTitleDivHeight * harringtonAspectRatio; 
+//fontSize2 = messageDIV_Height* harringtonAspectRatio; 
+//fontSize3 = quitHeight * harringtonAspectRatio; 
 //
 //Drawing Text
 color BlueInk = #4575DB; //AP MiniLesson on bit, 8-bit or byte (grey scale, 256), colour

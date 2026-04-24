@@ -1,4 +1,3 @@
-
 //Review Minim Library
 /* Library Notes
  - File / Sketch / Import Library / Manage Libraries
@@ -28,8 +27,8 @@ import ddf.minim.ugens.*;
 //Global Varaibles
 int appHeight, appWidth;
 Minim minim; //initates entire class
-int numberOfSongs = 1; //Best Practice
-int numberOfSoundEffects = 1; //Best Practice
+int numberOfSongs = 8; //Best Practice
+int numberOfSoundEffects = 4; //Best Practice
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
 AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
@@ -48,13 +47,11 @@ void setup() {
   String OldMusicFolder = "OldMusic/"; //Developer Specific
   String SoundEffectsFolder = "SoundEffects/"; //Don't have sound effects
   String Dependancies = "Dependancies/"; //Developer Specific
-  String soundEffect1 = "Car_Door_Closing";
   String MP3 = ".mp3";
   //
   String OldMusicDirectory = open + Dependancies + OldMusicFolder;
   String SoundEffectsDirectory = open + Dependancies + SoundEffectsFolder;
   //
-  String[] songName = new String[numberOfSongs];
   String[] songTitles = {
     "Beat_Your_Competition",
     "Cycles",
@@ -65,6 +62,13 @@ void setup() {
     "Start_Your_Engines",
     "The_Simplest"
   };
+  //
+  // Initialize numberOfSongs and songName
+  numberOfSongs = songTitles.length;
+  String[] songName = new String[numberOfSongs];
+  for (int i = 0; i < numberOfSongs; i++) {
+    songName[i] = songTitles[i];
+  }
   //for (  ) {
   //}//    Path = SoundEffectsDirectory + soundEffect1 + MP3; //Rewritting FILE
   //
@@ -73,7 +77,7 @@ void setup() {
     Path = OldMusicDirectory + name + MP3;
     playList[ currentSong ] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
     playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
-    soundEffects[currentSong] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+    //soundEffects[currentSong] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
     currentSong++;
   }//End FOR-Each
 
@@ -88,11 +92,12 @@ void setup() {
     }
   }//End Play List ERROR Check
   //
-  if  ( soundEffects[currentSong]==null ) {
-    println("PlayList is not loaded");
-    printArray(soundEffects);
-    //printArray for Sound Effects
-  }//
+  //if  ( soundEffects[currentSong]==null ) {
+  //  println("PlayList is not loaded");
+  //  printArray(soundEffects);
+
+  //  //printArray for Sound Effects
+  //}//
   inspectmetadata( playListMetaData );
   //
 }//
@@ -218,6 +223,7 @@ void keyPressed() {
   }
   if ( key=='B' || key=='b' ) {
     playList[currentSong].isPlaying();
+    playList[currentSong].rewind();
   } // Previous, Back //Students to finish
   //
   if ( key=='Y' || key=='y' ) currentSong = int(random(0, numberOfSongs)); //random(0, numberOfSongs)
