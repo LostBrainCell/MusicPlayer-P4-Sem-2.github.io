@@ -38,8 +38,8 @@ int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //Display
 void setup() {
   size( 700, 500 );
-   appWidth = width;
-   appHeight = height;
+  appWidth = width;
+  appHeight = height;
   //
   //
   minim = new Minim(this);
@@ -48,33 +48,57 @@ void setup() {
   String OldMusicFolder = "OldMusic/"; //Developer Specific
   String SoundEffectsFolder = "SoundEffects/"; //Don't have sound effects
   String Dependancies = "Dependancies/"; //Developer Specific
-  String songName1 = "groove";
   String soundEffect1 = "Car_Door_Closing";
   String MP3 = ".mp3";
   //
   String OldMusicDirectory = open + Dependancies + OldMusicFolder;
   String SoundEffectsDirectory = open + Dependancies + SoundEffectsFolder;
-  String Path = OldMusicDirectory + songName1 + MP3;
-  playList[ currentSong ] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-  playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
-  Path = SoundEffectsDirectory + soundEffect1 + MP3; //Rewritting FILE
-  soundEffects[currentSong] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  //
+  String[] songName = new String[numberOfSongs];
+  String[] songTitles = {
+    "Beat_Your_Competition",
+    "Cycles",
+    "Eureka",
+    "Ghost_Walk",
+    "groove",
+    "Newsroom",
+    "Start_Your_Engines",
+    "The_Simplest"
+  };
+  //for (  ) {
+  //}//    Path = SoundEffectsDirectory + soundEffect1 + MP3; //Rewritting FILE
+  //
+  String Path ;
+  for (String name : songName ) { //FOR Each
+    Path = OldMusicDirectory + name + MP3;
+    playList[ currentSong ] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+    playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
+    soundEffects[currentSong] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+    currentSong++;
+  }//End FOR-Each
+
   //
   //ErrorCheck
-  if  ( playList[currentSong]==null ) {
+  for ( AudioPlayer song : playList ) { //Mercer Code
+    if ( song == null ) { //ERROR, play list is NULL
+      //See FILE or minim.loadFile
+      println("The Play List did not load properly");
+      printArray(playList);
+      exit();
+    }
+  }//End Play List ERROR Check
+  //
+  if  ( soundEffects[currentSong]==null ) {
     println("PlayList is not loaded");
-    printArray(playList);
+    printArray(soundEffects);
     //printArray for Sound Effects
-  } else {
-    //playList[currentSong].play();
-    //printArray(playList);
-    ////Note: Music/Sound Effects only play with |void setup()| and |void draw()| are in the code
   }//
   inspectmetadata( playListMetaData );
+  //
 }//
 //
 void draw() {
-  //textdraw();
+  textdraw( playListMetaData[currentSong].title(), playListMetaData[currentSong].genre() );
 }//
 //
 void mousePressed() {

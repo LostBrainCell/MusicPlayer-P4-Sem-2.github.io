@@ -28,27 +28,12 @@ rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height); // Big Bo
 //
 //Strings, Text, Literal
 //Note: Metadata
-//String title = "Testing Text";
-/* Full String longer than Rectangle, "Wahoo! I changed 2D Size."
- - divHeight must fit the font size or text is not shown (Advanced, error check includes %-decrease)
- - Fonts includes the in WHITE SPACE around the foreground "coloured ink"
- - divWidth must include the font size
- - if font is too big, wrap around happens
- - OR full string is not drawn
- */
-//Fonts from OS
-//println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
-//String[] fontList = PFont.list(); //To list all fonts available on system
-//printArray(fontList); //For listing all possible fonts to choose, then createFont
-//Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
-//Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
-//
-// Students enter all text from Case Study
+String xbutton = "X";
 //
 // Fonts from OS
-float fontSize1 = appHeight; //Entire Program, Algorithm to have smallest font size
-float fontSize2 = appHeight; 
-float fontSize3 = appHeight; 
+float fontSize1 = songTitleDivHeight; //Entire Program, Algorithm to have smallest font size
+float fontSize2 = messageDIV_Height; 
+float fontSize3 = quitHeight; 
 PFont font; //Font Varaible Name, able to have more than one Font
 String Calibri = "Calibri Bold"; //Spelling of the Font Matters, see PFont.list() v Create Font above
 font = createFont(Calibri, fontSize1);
@@ -56,13 +41,7 @@ font = createFont(Calibri, fontSize1);
 //font = createFont(Calibri, fontSize3);
 //
 // Aspect Ratio for Harrington
-float fontSizeHarrington = 86; //Default fontSize for ~100%
-float divHeightHarrington = songTitleDivHeight; //Key:Value, value=120
-float harringtonAspectRatio = fontSizeHarrington / divHeightHarrington; //#<1
 //
-fontSize1 = songTitleDivHeight * harringtonAspectRatio; 
-fontSize2 = messageDIV_Height* harringtonAspectRatio; 
-fontSize3 = quitHeight * harringtonAspectRatio; 
 //
 //Drawing Text
 color BlueInk = #4575DB; //AP MiniLesson on bit, 8-bit or byte (grey scale, 256), colour
@@ -89,7 +68,7 @@ text( title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight
 //
 textFont(font, fontSize2); //must include textSize() before text() & textWidth()
 iWhile=0;
-while ( textWidth(title) > messageDIV_Width ) {
+while ( textWidth(message) > messageDIV_Width ) {
   iWhile++;
   if ( iWhile>1000 ) {
     println("Infninte WHILE Loop");
@@ -102,7 +81,7 @@ text( title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
 //
 textFont(font, fontSize3); //must include textSize() before text() & textWidth()
 iWhile=0;
-while ( textWidth(title) > quitWidth ) {
+while ( textWidth(xbutton) > quitWidth ) {
   iWhile++;
   if ( iWhile>1000 ) {
     println("Infninte WHILE Loop");
