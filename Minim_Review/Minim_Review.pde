@@ -36,9 +36,9 @@ int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //
 //Display
 void setup() {
-  size( 700, 500 );
-  appWidth = width;
-  appHeight = height;
+  fullScreen();
+  appWidth = displayWidth;
+  appHeight = displayHeight;
   //
   //
   minim = new Minim(this);
@@ -80,7 +80,7 @@ void setup() {
     //soundEffects[currentSong] = minim.loadFile( Path ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
     currentSong++;
   }//End FOR-Each
-
+  currentSong=0; //Mandantory to not get ArrayIndexOutofBoundsException
   //
   //ErrorCheck
   for ( AudioPlayer song : playList ) { //Mercer Code
@@ -95,7 +95,7 @@ void setup() {
   //if  ( soundEffects[currentSong]==null ) {
   //  println("PlayList is not loaded");
   //  printArray(soundEffects);
-
+  //  exit();
   //  //printArray for Sound Effects
   //}//
   inspectmetadata( playListMetaData );
@@ -108,7 +108,7 @@ void draw() {
 //
 void mousePressed() {
 } //End Mouse Pressed
-//
+//  
 void keyPressed() {
   /* Simple Play
    playList[currentSong].play(); //BasicPlay

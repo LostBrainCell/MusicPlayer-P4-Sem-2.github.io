@@ -77,7 +77,7 @@ while ( textWidth(message) > messageDIV_Width ) {
   fontSize2 *= constantDecrease;
   textFont(font, fontSize2);
 }
-text( title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+text( message, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
 //
 textFont(font, fontSize3); //must include textSize() before text() & textWidth()
 iWhile=0;
@@ -90,6 +90,6 @@ while ( textWidth(xbutton) > quitWidth ) {
   fontSize3 *= constantDecrease;
   textFont(font, fontSize3);
 }
-text( title, quitX, quitY, quitWidth, quitHeight );
+text( xbutton , quitX, quitY, quitWidth, quitHeight );
 fill(resetInk);
 }//
