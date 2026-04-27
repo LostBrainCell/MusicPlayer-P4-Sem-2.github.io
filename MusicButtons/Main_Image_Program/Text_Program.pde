@@ -18,15 +18,12 @@ void FontSetup() {
   String CalibriBold = "Calibri Bold";
   //font =  createFont(CalibriBold, fontSize);
   FontSize();
-  //font = createFont( CalibriBold, fontSize[0] );
+  font = createFont( CalibriBold, fontSize[0] );
   //
   //float fontSizeCalibri = 86; //Default fontSize for ~100%
   //  float divHeightCalibri= ; //Key:Value, value=120
   //  float harringtonAspectRatio = fontSizeHarrington / divHeightHarrington; //#<1
   loopFontSize(fontSize);
-  
-  
-  
 }//
 void FontSize() {
   float[] fontSize = new float[6];
