@@ -3,6 +3,7 @@ color BlueInk = #4575DB; //AP MiniLesson on bit, 8-bit or byte (grey scale, 256)
 color whiteInk = #FFFFFF; //Grey Scale is 255
 color resetink = whiteInk;
 float[] fontSize;
+// This code is for divs=14 and divs=15
 //
 void DrawingText( PFont f, float fs, String string, color ink, float x, float y, float w, float h, int xAlign, int yAlign ) {
   fill(ink);
@@ -23,6 +24,7 @@ void FontSetup() {
   //float fontSizeCalibri = 86; //Default fontSize for ~100%
   //  float divHeightCalibri= ; //Key:Value, value=120
   //  float harringtonAspectRatio = fontSizeHarrington / divHeightHarrington; //#<1
+  // Note 
   loopFontSize(fontSize);
 }//
 void FontSize() {

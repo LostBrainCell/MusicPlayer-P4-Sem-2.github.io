@@ -1,6 +1,7 @@
 //Global Variables
 /*
  This is for void Setup in main Program
+ Make Images pop up in div=3
  */
 int FileCount = 0;
 int CurrentFile = FileCount - FileCount;
