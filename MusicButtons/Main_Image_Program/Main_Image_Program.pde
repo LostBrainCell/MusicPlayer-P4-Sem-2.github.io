@@ -11,9 +11,10 @@ void setup() {
   appHeight = displayHeight;
   //
   divs();
-  //LoadFile();
+  LoadFile();
   //FontSetup();
-  //
+  ////
+  //DrawingText( font, fontSize, title,       );
 }//END SETUP
 //
 void draw() {
@@ -22,8 +23,8 @@ void draw() {
   //ErrorCheck("draw() Music GUI set:", musicGUI);
   if ( musicGUI==true ) {
     seeMusicGUI();
-    //imageDrawing( imagesPlayList[CurrentFile], 0 ); //imageDrawingAspectRatio
-    //imageDrawingAspectRatio( imagesPlayList[CurrentFile], 12 ); //imageDrawing
+    imageDrawing( imagesPlayList[1], 12 ); //imageDrawingAspectRatio 
+    //imageDrawingAspectRatio( imagesPlayList[0], 13 ); //imageDrawing
   } else {
     background(0);
   }
