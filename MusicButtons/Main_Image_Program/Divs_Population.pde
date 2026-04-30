@@ -31,6 +31,16 @@ void divs() {
   row[2] = row[1] + referent + referent*1/2;
   //ErrorCheck("Row Loading", row);
   //
+  //Music Symbols Values
+  float ButtonWidth = referent;
+  float ButtonHeight = referent;
+  
+  
+  
+  
+  
+  
+  
   //Media Calculation ERROR
   float testHeight = referent*2.5 + textHeight*2;
   float errorIncrease = referent*1/2;
