@@ -32,9 +32,7 @@ void divs() {
   //ErrorCheck("Row Loading", row);
   //
   //Music Symbols Values
-  float ButtonWidth = referent;
-  float ButtonHeight = referent;
-  
+
   
   
   
