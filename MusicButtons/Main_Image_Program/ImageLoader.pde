@@ -75,7 +75,7 @@ void imageDrawingAspectRatio( PImage image, int i ) {
 //
 void checkLoadImage() {
   PImage errorImage = loadImage( "SomethingWentWrong.png" );
-  PImage thumbsupImage = loadImage( "ThumbsUp.png" );
+  //PImage thumbsupImage = loadImage( "ThumbsUp.png" );
   //Error image without need for pathway
   //Error image allows image() to be completed, notifying user of error
   //Demonstrates alternate way to load an image without a pathway

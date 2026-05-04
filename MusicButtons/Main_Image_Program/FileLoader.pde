@@ -5,6 +5,9 @@
  */
 int FileCount = 0;
 int CurrentFile = FileCount - FileCount;
+int numberOfSongs = 8; //Best Practice
+AudioPlayer[] SongPlayList = new AudioPlayer[ numberOfSongs ];
+AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
 //
 PImage[] imagesPlayList;
 //
@@ -18,12 +21,12 @@ void LoadFile() {
   FileCheck(ImagesFolderPath);
   //Music Folder Path
   //String MusicFolder = "Downloaded Music/";
-  //String OldMusicFolder = "OldMusic/";
+  String OldMusicFolder = "OldMusic/";
   //String MusicFolderPath = sketchPath( Open + Open + DependanciesFolder + MusicFolder );
-  //String OldMusicFolderPath = sketchPath( Open + Open + DependanciesFolder + OldMusicFolder );
+  String OldMusicFolderPath = sketchPath( Open + Open + DependanciesFolder + OldMusicFolder );
   //////
   //FileCheck(MusicFolderPath);
-  //FileCheck(OldMusicFolderPath);
+  FileCheck(OldMusicFolderPath);
 }//
 void FileCheck( String Source ) {
   File LocalFile  = new File(Source);
@@ -60,6 +63,15 @@ void ImagesLoader(String[] files) {
     fileNumber++; //functions similar to FOR
   }
   checkLoadImage(); //See Image
+}//
+//
+void SongLoader (String[] files) {
+  SongPlayList = new AudioPlayer[FileCount];
+  int fileNumber=0;
+  while ( fileNumber < FileCount ) {
+    SongPlayList[fileNumber] = minim.loadFile(files[fileNumber]);
+    fileNumber++;
+  }
 }//
 ////
 //
