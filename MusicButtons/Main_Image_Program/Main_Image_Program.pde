@@ -8,6 +8,7 @@ import ddf.minim.ugens.*;
 
 import java.io.File;
 //
+Minim minim;
 int appWidth, appHeight;
 Boolean musicGUI=false;
 //

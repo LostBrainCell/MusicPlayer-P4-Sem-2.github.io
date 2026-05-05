@@ -1,13 +1,13 @@
 //
 void musicload() {
   minim = new Minim(this);
+  String Sketch = sketchPath();
   String open = "../" ;
   //String Seperator = "/" ; // "../" is mandotory to prevent Null
   String OldMusicFolder = "OldMusic/"; //Developer Specific
-  //String SoundEffectsFolder = "SoundEffects/"; //Don't have sound effects
   String Dependancies = "Dependancies/"; //Developer Specific
   //
-  String OldMusicDirectory = sketchPath(open + Dependancies + OldMusicFolder);
+  String OldMusicDirectory = Sketch + Dependancies + OldMusicFolder;
   //
   File oldmusicFolder = new File(OldMusicDirectory);
   //

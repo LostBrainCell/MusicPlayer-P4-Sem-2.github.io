@@ -27,7 +27,7 @@ String saveTxtPath_currentSong; //For Saving Last Known Song Played
 String saveTxtPath_randomStart; //For Saving Preference: Random Start
 //
 Minim minim; //initates entire class
-int numberOfSongs = 8; //Best Practice
+int numberOfSongs = 1; //Best Practice
 //int numberOfSoundEffects = ???
 AudioPlayer[] playList; //length of array determined by reading the Music Folder
 //AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];

@@ -66,6 +66,7 @@ void ImagesLoader(String[] files) {
 }//
 //
 void SongLoader (String[] files) {
+  minim = new Minim(this);
   SongPlayList = new AudioPlayer[FileCount];
   int fileNumber=0;
   while ( fileNumber < FileCount ) {
@@ -73,5 +74,6 @@ void SongLoader (String[] files) {
     fileNumber++;
   }
 }//
+
 ////
 //
