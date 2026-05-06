@@ -27,12 +27,12 @@ void divs() {
   //ErrorCheck("Column Loading", column);
   float[] row = new float[3];
   row[0] = divs[1] + referent;
-  row[1] = row[0] + textHeight + referent*1/2;
-  row[2] = row[1] + referent + referent*1/2;
+  row[1] = row[0] + textHeight + referent*1/2; //1st row of buttons
+  row[2] = row[1] + referent + referent*1/2; //2nd row of buttons
   //ErrorCheck("Row Loading", row);
   //
   //Music Symbols Values
-
+  float DivWidth1 = divs[0] + column[0];
   
   
   
@@ -118,9 +118,9 @@ void divs() {
       //Empty Else
     }
     //
-    //ErrorCheck("Inside FOR, Checking index and DIV-var",  i, divs[i]);
+    ErrorCheck("Inside FOR, Checking index and DIV-var",  i, divs[i]);
   }
-  //ErrorCheck("Inspect DIVs Array", divs);
+  ErrorCheck("Inspect DIVs Array", divs);
 }// End divs
 //
 //Note: index below matches %4 counting to load array
@@ -167,6 +167,12 @@ void buildingRow(float[] row, float textHeight, float referent) {
   row[1] = poly( 1, row[0], 1, textHeight, 0.5, referent ); //row[0] + textHeight + referent*1/2
   row[2] = poly( 1, row[1], 1, referent, 0.5, referent ); //row[1] + referent + referent*1/2;
 }//
+
+
+
+
+
+
 //Buttons
 int checkNum (int i) {
   if ( i >= FileCount ) {

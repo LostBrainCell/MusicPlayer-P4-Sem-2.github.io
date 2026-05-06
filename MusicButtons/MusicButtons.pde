@@ -27,6 +27,7 @@ void setup() {
   musicSymbol( 5, musicButtonDivX[6], buttonY, buttonWidth ); //5=Create Triangle
   musicSymbol( 7, musicButtonDivX[7], buttonY, buttonWidth ); //LOOP BUTTON
   musicSymbol( 8, musicButtonDivX[8], buttonY, buttonWidth ); //LOOP BUTTON
+  
 
   //
 }//END SETUP

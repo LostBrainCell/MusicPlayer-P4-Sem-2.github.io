@@ -3,7 +3,8 @@
 //int numberOfButtons=10;
 //float[]  = new float[numberOfButtons];
 //
-////
+//
+
 //void drawMusicDivs( float x, float y, float d) {
 //  square( x, y, d );
 //}//
@@ -11,13 +12,14 @@
 //  for ( int i=1; i<musicButtonDivX.length; i++ ) {
 //    square( x[i], y, d );
 //  }
-
 //}//
-void  musicSymbol( int index, float divX, float divY, float divDimension ) {
-  divX = divX + divDimension*1/4;
-  divY = divY + divDimension*1/4;
-  divDimension = divDimension*1/2;
+//
+/*
+void MusicButtonsSetup(float index, float x) {}//
+//
+void  musicSymbol( float divX, float divY, float DivDimension) {
   //
+  
   if ( index==1 || index==2 || index==7 || index==8 ) {
     //if ( index==1 || index==2 || index==7 || index==8 ) ); // Squares inside buttons
     if ( index==7 || index==8 ) {
@@ -27,11 +29,6 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
   //
   if ( index==2 ) drawLines( divX, divY, divDimension ); //Lines
   //
-  if ( index==3 ) { //Rectangle
-    float rectWidth = divDimension/4;   // Narrow width for the vertical rectangles
-    float rectHeight = divDimension;    // Full height of the button
-    rect(divX, divY, rectWidth, rectHeight);
-  }//
   // Pause Button Dimensions
   if ( index==4 ) {
     if (index == 4) { // Pause Button
@@ -45,8 +42,12 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
   }
   if ( index==5 ) WideTriangle( 5, divX, divY, divDimension );
   if ( index==6 ) {
-  
-  
+    divX = divX-divDimension/4 + SmallerDimensionValue( divDimension/2 );
+    HalvedWidthTriangleRight ( 4, divX+divDimension*1/10, divY, divDimension );
+    HalvedWidthTriangleRight ( 4, divX+divDimension*3/7, divY, divDimension );
+    float rectWidth = divDimension/4;   // Narrow width for the vertical rectangles
+    float rectHeight = divDimension;    // Full height of the button
+    rect(divX+divDimension*.77, divY, rectWidth, rectHeight);
   }///
   if ( index==7 || index==8 ) {
     divX = SmallerDimensionValue( divX, divDimension );
@@ -58,10 +59,13 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
   if ( index==9 ) { // triangles facing left
     if ( index==9 ) {
       divX = divX+divDimension/4 + SmallerDimensionValue( divDimension/2 );
-      HalvedWidthTriangleLeft ( 9, divX+divDimension*1/10 , divY, divDimension );
-      HalvedWidthTriangleLeft ( 9, divX+divDimension*3/7 , divY, divDimension );
+      HalvedWidthTriangleLeft ( 9, divX+divDimension*1/10, divY, divDimension );
+      HalvedWidthTriangleLeft ( 9, divX+divDimension*3/7, divY, divDimension );
       //divDimension = divDimension-SmallerDimensionValue( divDimension ); only makes the triangle size smaller, not narrower
       //place holder for small triangles in the loop button
+      float rectWidth = divDimension/4;   // Narrow width for the vertical rectangles
+      float rectHeight = divDimension;    // Full height of the button
+      rect(divX, divY, rectWidth, rectHeight);
     }
   }
   //
@@ -79,11 +83,12 @@ void drawLines( float divX, float divY, float divDimension ) {
   line( divX+divDimension, divY, divX, divY+divDimension ); //Line from top bottom left to top right
 }//
 void WideTriangle( int index, float divX, float divY, float divDimension ) {
-  triangle( divX, divY, divX+divDimension, divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension );
+  triangle( divX, divY, divX+divDimension, divY+SmallerDimensionValue( divDimension ) , divX, divY+divDimension );
 }//
 void HalvedWidthTriangleLeft( int index, float divX, float divY, float divDimension ) {
-  triangle( divX, divY, divX-divDimension/3 , divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension ); // divX-divDimension to make triangles face left
+  triangle( divX, divY, divX-divDimension/3, divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension ); // divX-divDimension to make triangles face left
 }//
 //void smallTriangle ( int index, float divX, float divY, float divDimension ) {
 //  //triangle( divX, divY,
 //}//
+*/

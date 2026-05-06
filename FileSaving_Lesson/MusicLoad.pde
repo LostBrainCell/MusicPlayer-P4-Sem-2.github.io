@@ -1,17 +1,14 @@
 //
 void musicload() {
   minim = new Minim(this);
-  String Sketch = sketchPath();
+  //String Sketch = sketchPath();
   String open = "../" ;
-  //String Seperator = "/" ; // "../" is mandotory to prevent Null
-  String OldMusicFolder = "OldMusic/"; //Developer Specific
-  String Dependancies = "Dependancies/"; //Developer Specific
+  String OldMusicDirectory = "Dependancies/OldMusic/"; //Developer Specific
+  String OldMusicPath =  sketchPath( open + OldMusicDirectory );
   //
-  String OldMusicDirectory = Sketch + Dependancies + OldMusicFolder;
+  File OldMusicFolder = new File(OldMusicPath);
   //
-  File oldmusicFolder = new File(OldMusicDirectory);
-  //
-  File[] filePathway_Name = oldmusicFolder.listFiles();
+  File[] filePathway_Name = OldMusicFolder.listFiles();
   //
   String[] files = new String[filePathway_Name.length];
   numberOfSongs = filePathway_Name.length;
@@ -21,7 +18,7 @@ void musicload() {
     //
     //Comment FOR out and use FOR-Each, rememeber comment-in i above
     for ( int i=currentSong; i<numberOfSongs; i++) {
-      files[i] = OldMusicDirectory + filePathway_Name[i].getName(); //print fileNames.getName() Object to String
+      files[i] = OldMusicPath + filePathway_Name[i].getName(); //print fileNames.getName() Object to String
     } // End old FOR
     /*
     for ( File file : filePathway_Name ) { //FOR-EACH Loop, creates locate class
@@ -31,6 +28,7 @@ void musicload() {
      }
      */
   }
+  printArray(files);
   currentSong=0;
   playList = new AudioPlayer[numberOfSongs]; //sets the array length
   while ( currentSong < numberOfSongs ) {

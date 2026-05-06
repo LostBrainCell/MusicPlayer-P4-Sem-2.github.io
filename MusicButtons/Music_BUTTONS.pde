@@ -63,8 +63,12 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
   }
   if ( index==5 ) WideTriangle( 5, divX, divY, divDimension );
   if ( index==6 ) {
-  
-  
+    divX = divX-divDimension/4 + SmallerDimensionValue( divDimension/2 );
+    HalvedWidthTriangleRight ( 4, divX+divDimension*1/10, divY, divDimension );
+    HalvedWidthTriangleRight ( 4, divX+divDimension*3/7, divY, divDimension );
+    float rectWidth = divDimension/4;   // Narrow width for the vertical rectangles
+    float rectHeight = divDimension;    // Full height of the button
+    rect(divX+divDimension*.77, divY, rectWidth, rectHeight);
   }///
   if ( index==7 || index==8 ) {
     divX = SmallerDimensionValue( divX, divDimension );
@@ -76,8 +80,8 @@ void  musicSymbol( int index, float divX, float divY, float divDimension ) {
   if ( index==9 ) { // triangles facing left
     if ( index==9 ) {
       divX = divX+divDimension/4 + SmallerDimensionValue( divDimension/2 );
-      HalvedWidthTriangleLeft ( 9, divX+divDimension*1/10 , divY, divDimension );
-      HalvedWidthTriangleLeft ( 9, divX+divDimension*3/7 , divY, divDimension );
+      HalvedWidthTriangleLeft ( 9, divX+divDimension*1/10, divY, divDimension );
+      HalvedWidthTriangleLeft ( 9, divX+divDimension*3/7, divY, divDimension );
       //divDimension = divDimension-SmallerDimensionValue( divDimension ); only makes the triangle size smaller, not narrower
       //place holder for small triangles in the loop button
     }
@@ -100,7 +104,10 @@ void WideTriangle( int index, float divX, float divY, float divDimension ) {
   triangle( divX, divY, divX+divDimension, divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension );
 }//
 void HalvedWidthTriangleLeft( int index, float divX, float divY, float divDimension ) {
-  triangle( divX, divY, divX-divDimension/3 , divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension ); // divX-divDimension to make triangles face left
+  triangle( divX, divY, divX-divDimension/3, divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension ); // divX-divDimension to make triangles face left
+}//
+void HalvedWidthTriangleRight( int index, float divX, float divY, float divDimension ) {
+  triangle( divX, divY, divX+divDimension/3, divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension ); // divX-divDimension to make triangles face left
 }//
 //void smallTriangle ( int index, float divX, float divY, float divDimension ) {
 //  //triangle( divX, divY,
