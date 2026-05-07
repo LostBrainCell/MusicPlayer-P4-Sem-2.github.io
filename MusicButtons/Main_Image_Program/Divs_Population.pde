@@ -36,8 +36,7 @@ void divs() {
   
   
   
-  
-  
+ 
   
   //Media Calculation ERROR
   float testHeight = referent*2.5 + textHeight*2;
@@ -123,6 +122,12 @@ void divs() {
   ErrorCheck("Inspect DIVs Array", divs);
 }// End divs
 //
+
+
+
+
+
+
 //Note: index below matches %4 counting to load array
 void seeQuitMusicButton() {
   for ( int j=4; j<9; j+=4 ) {

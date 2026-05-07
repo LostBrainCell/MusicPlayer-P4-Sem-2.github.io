@@ -15,10 +15,7 @@
 //}//
 //
 
-void MusicButtonsSetup(float index, float x) {}//
-//
-void  musicSymbol( float divX, float divY, float DivDimension) {
-  //
+void MusicButtonsSetup(float index, float X, float Y, float referent ) {
   
   if ( index==1 || index==2 || index==7 || index==8 ) {
     //if ( index==1 || index==2 || index==7 || index==8 ) ); // Squares inside buttons
@@ -27,13 +24,13 @@ void  musicSymbol( float divX, float divY, float DivDimension) {
     }
   }
   //
-  if ( index==2 ) drawLines( divX, divY, divDimension ); //Lines
+
   //
   // Pause Button Dimensions
   if ( index==4 ) {
     if (index == 4) { // Pause Button
       float rectWidth = divDimension/3;   // Narrow width for the vertical rectangles
-      float RectSpace = divX+rectWidth*2; // Spacing between the two rectangles
+      float RectSpace = X+rectWidth*2; // Spacing between the two rectangles
       float rectHeight = divDimension;    // Full height of the button
       rect(divX, divY, rectWidth, rectHeight);
       // 2nd Vertical Rectangle
@@ -68,8 +65,10 @@ void  musicSymbol( float divX, float divY, float DivDimension) {
       rect(divX, divY, rectWidth, rectHeight);
     }
   }
-  //
 }//
+//
+//
+
 float SmallerDimensionValue( float divXY, float divDimension ) {
   return divXY = divXY + divDimension*1/4;
 }//
@@ -83,10 +82,13 @@ void drawLines( float divX, float divY, float divDimension ) {
   line( divX+divDimension, divY, divX, divY+divDimension ); //Line from top bottom left to top right
 }//
 void WideTriangle( int index, float divX, float divY, float divDimension ) {
-  triangle( divX, divY, divX+divDimension, divY+SmallerDimensionValue( divDimension ) , divX, divY+divDimension );
+  triangle( divX, divY, divX+divDimension, divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension );
 }//
 void HalvedWidthTriangleLeft( int index, float divX, float divY, float divDimension ) {
   triangle( divX, divY, divX-divDimension/3, divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension ); // divX-divDimension to make triangles face left
+}//
+void HalvedWidthTriangleRight( int index, float divX, float divY, float divDimension ) {
+  triangle( divX, divY, divX+divDimension/3, divY+SmallerDimensionValue( divDimension ), divX, divY+divDimension ); // divX-divDimension to make triangles face left
 }//
 //void smallTriangle ( int index, float divX, float divY, float divDimension ) {
 //  //triangle( divX, divY,
