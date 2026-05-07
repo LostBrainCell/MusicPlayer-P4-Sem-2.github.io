@@ -32,7 +32,7 @@ void divs() {
   //ErrorCheck("Row Loading", row);
   //
   //Music Symbols Values
-  float DivWidth1 = divs[0] + column[0];
+  //float DivWidth1 = divs[0] + column[0];
   
   
   
@@ -147,26 +147,27 @@ void rectDIV(float x, float y, float w, float h) {
   rect(x, y, w, h);
 }//End Rectangle Code
 //
-float poly( float a, float x, float b, float y ) {
-  //Note: a, b = {-1, 0, 1}
-  //Note: a, b requires a fraction or decimal sometimes
-  //Note: x, y are airthmetic variables
-  return (a*x) + (b*y) ;
-} //END
-//
-float poly( int a, float x, int b, float y, float c, float z ) {
-  //Note: a, b, c = {-1, 0, 1}
-  //Note: a, b, c requires a fraction or decimal sometimes
-  //Note: x, y, z are airthmetic variables
-  return (a*x) + (b*y) + (c*z) ;
-} //END
+//Note these don't affect DIVs
+//float poly( float a, float x, float b, float y ) {
+//  //Note: a, b = {-1, 0, 1}
+//  //Note: a, b requires a fraction or decimal sometimes
+//  //Note: x, y are airthmetic variables
+//  return (a*x) + (b*y) ;
+//} //END
+////
+//float poly( int a, float x, int b, float y, float c, float z ) {
+//  //Note: a, b, c = {-1, 0, 1}
+//  //Note: a, b, c requires a fraction or decimal sometimes
+//  //Note: x, y, z are airthmetic variables
+//  return (a*x) + (b*y) + (c*z) ;
+//} //END
 //
 //Note: building Rows for DIVs
-void buildingRow(float[] row, float textHeight, float referent) {
-  row[0] = poly( 1, divs[1], 1, referent, 0, 0 ); //divs[1] + referent
-  row[1] = poly( 1, row[0], 1, textHeight, 0.5, referent ); //row[0] + textHeight + referent*1/2
-  row[2] = poly( 1, row[1], 1, referent, 0.5, referent ); //row[1] + referent + referent*1/2;
-}//
+//void buildingRow(float[] row, float textHeight, float referent) {
+//  row[0] = poly( 1, divs[1], 1, referent, 0, 0 ); //divs[1] + referent
+//  row[1] = poly( 1, row[0], 1, textHeight, 0.5, referent ); //row[0] + textHeight + referent*1/2
+//  row[2] = poly( 1, row[1], 1, referent, 0.5, referent ); //row[1] + referent + referent*1/2;
+//}// Note this Code doesn't affect DIVS
 
 
 

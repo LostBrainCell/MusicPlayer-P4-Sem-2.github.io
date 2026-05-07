@@ -14,7 +14,7 @@
 //  }
 //}//
 //
-/*
+
 void MusicButtonsSetup(float index, float x) {}//
 //
 void  musicSymbol( float divX, float divY, float DivDimension) {
@@ -91,4 +91,3 @@ void HalvedWidthTriangleLeft( int index, float divX, float divY, float divDimens
 //void smallTriangle ( int index, float divX, float divY, float divDimension ) {
 //  //triangle( divX, divY,
 //}//
-*/
