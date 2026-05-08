@@ -9,7 +9,10 @@ CMP SC 30
 - [X] Case Study
 - [X] DIVs is the main PDE file im working on and DIVs is a reference for what I'm doing in Arithmethic (Rectangles)
 - [X] Image Program (WIP)
-- [ ] Text Review (Turn DIVs into Text boxes)
+- [X] Text Review (Turn DIVs into Text boxes)
+- [ ] Music Load in Main Image Program
+- [ ] Music Symbols in Main Image Program 
+- [ ] Text in Main Image Program
 
 
 ---
