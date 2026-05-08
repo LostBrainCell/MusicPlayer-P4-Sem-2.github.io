@@ -18,7 +18,7 @@ void setup() {
   appHeight = displayHeight;
   //
   divs();
-  MusicButtonsSetup( 6, divs[6], divs[6], divs[2]/13);
+  //MusicButtonsSetup( 6, divs[6], divs[6], divs[2]/13);
   //LoadFile();
   //FontSetup();
   ////
@@ -38,6 +38,7 @@ void draw() {
   }
   seeQuitMusicButton();
   //
+  
 } //End draw
 //
 void mousePressed() {

@@ -33,10 +33,10 @@ void FontSize() {
   loopFontSize(fontSize);
   printArray(fontSize);
 }//
-void loopFontSize(float[] fontSize ) {
-  for ( int i=0; i<fontSize.length; ) {
+void loopFontSize(float[] FS ) {
+  for ( int i=0; i<FS.length; ) {
     fontSize[i] = appHeight;
-    println( "size is", fontSize[i]);
+    println( "size is", FS[i]);
     i++;
   }//
 }//
