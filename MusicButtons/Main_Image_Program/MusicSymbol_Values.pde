@@ -14,7 +14,7 @@
 //  }
 //}//
 //
-
+/*
 void MusicButtonsSetup(float index, float X, float Y, float referent ) {
   
   if ( index==1 || index==2 || index==7 || index==8 ) {
@@ -93,3 +93,4 @@ void HalvedWidthTriangleRight( int index, float divX, float divY, float divDimen
 //void smallTriangle ( int index, float divX, float divY, float divDimension ) {
 //  //triangle( divX, divY,
 //}//
+*/

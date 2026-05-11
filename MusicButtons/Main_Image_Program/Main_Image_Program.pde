@@ -8,6 +8,8 @@ import ddf.minim.ugens.*;
 
 import java.io.File;
 //
+MusicPlayer DivsMusicPlayer;
+//
 Minim minim;
 int appWidth, appHeight;
 Boolean musicGUI=false;
@@ -17,7 +19,8 @@ void setup() {
   appWidth = displayWidth;
   appHeight = displayHeight;
   //
-  divs();
+  DivsMusicPlayer = new MusicPlayer(16);
+  DivsMusicPlayer.seeQuitMusicButton();
   //MusicButtonsSetup( 6, divs[6], divs[6], divs[2]/13);
   //LoadFile();
   //FontSetup();
@@ -29,50 +32,22 @@ void draw() {
   //
   //Activate Music GUI
   //ErrorCheck("draw() Music GUI set:", musicGUI);
-  if ( musicGUI==true ) {
-    seeMusicGUI();
-    //imageDrawing( imagesPlayList[1], 12 ); //imageDrawingAspectRatio 
+  if ( DivsMusicPlayer.musicGUI==true ) {
+    DivsMusicPlayer.draw();
+    //imageDrawing( imagesPlayList[1], 12 ); //imageDrawingAspectRatio
     //imageDrawingAspectRatio( imagesPlayList[0], 13 ); //imageDrawing
   } else {
     background(0);
   }
-  seeQuitMusicButton();
-  //
-  
+  DivsMusicPlayer.seeQuitMusicButton();  //
 } //End draw
 //
 void mousePressed() {
-  //ERROR Check NUM below
-  //int num=8; //ERROR Check i%4=0, int(i/4)=3, num=8
-  //println(divs[num], divs[num+1], divs[num+2], divs[num+3]);
-  //
-  //mouseX>divs[num] && mouseX<divs[num]+divs[num+2] && mouseY>divs[num+1] && mouseY<divs[num+1]+divs[num+3]
-  //CAUTION: IF Statements will execute each time
-  //Note: easily used with COPY & PASTE
-  int num=4;
-  if ( mouseReturn (num) ) exit();
-  num=8;
-  if ( mouseReturn (num) ) musicGUI = varSwitch(musicGUI);
+  DivsMusicPlayer.mousePressed();
 } //End Mouse Pressed
 //
 void keyPressed() {
-  //key=='CAP' || key=='LOWER' //Note" Caps Lock
-  //key==CODED || keyCode==ESC //Special Keys
-  if (key==CODED || keyCode==ESC) exit();
-  if (key=='Q' || key=='q') exit();
-  if (key=='M' || key=='m') musicGUI = varSwitch(musicGUI);
-  if (key=='N' || key=='n') CurrentFile = loopVar( CurrentFile ); //See Buttons
-  checkNum (CurrentFile);
-} //End Key Pressed
-Boolean varSwitch(Boolean variable) {
-  if ( variable==true ) {
-    return variable=false;
-  } else {
-    return variable=true;
-  }
-}
-Boolean mouseReturn (int num) {
-  return mouseX>divs[num] && mouseX<divs[num]+divs[num+2] && mouseY>divs[num+1] && mouseY<divs[num+1]+divs[num+3];
+  DivsMusicPlayer.keyPressed();
 }//End Mouse Return
 //
 //End MAIN Program
