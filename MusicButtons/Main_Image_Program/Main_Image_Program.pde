@@ -7,9 +7,9 @@ import ddf.minim.ugens.*;
 //Global Variables
 
 import java.io.File;
-//
+// Class
 MusicPlayer DivsMusicPlayer;
-FileLoad FileIsLoading;
+FileLoad FileLoader;
 //
 Minim minim;
 int appWidth, appHeight;
@@ -22,6 +22,8 @@ void setup() {
   //
   DivsMusicPlayer = new MusicPlayer(16);
   DivsMusicPlayer.seeQuitMusicButton();
+  FileLoader = new FileLoad();
+  FileLoader.LoadFile();
   //MusicButtonsSetup( 6, divs[6], divs[6], divs[2]/13)
   //FontSetup();
   ////

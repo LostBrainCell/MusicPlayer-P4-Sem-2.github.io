@@ -18,11 +18,11 @@ class FileLoad {
   void LoadFile() {
     String Open = "../"; //Exit out of current folder
     String DependanciesFolder = "Dependancies/";
-    String ImagesFolder = "Images/";
-    String ImagesFolderPath = sketchPath( Open + Open + DependanciesFolder + ImagesFolder ); //Note NULLPOINTEREXCEPTION IF no "/" added
-    println("Images folder path: " + ImagesFolderPath);
-    //
-    FileCheck(ImagesFolderPath);
+    //String ImagesFolder = "Images/";
+    //String ImagesFolderPath = sketchPath( Open + Open + DependanciesFolder + ImagesFolder ); //Note NULLPOINTEREXCEPTION IF no "/" added
+    //println("Images folder path: " + ImagesFolderPath);
+    ////
+    //FileCheck(ImagesFolderPath);
     //Music Folder Path
     //String MusicFolder = "Downloaded Music/";
     String OldMusicFolder = "OldMusic/";
@@ -46,6 +46,7 @@ class FileLoad {
       for ( File file : fileNames ) { //FOR EACH Loop, creates local class
         files[i] = Source + file.getName(); //print fileNames.getName() Object to String
         //Note: getName() is built in code
+        println( file ); //Check Files
         i++; //iteration necessary here, not in regular FOR
       }
     } else {
@@ -71,15 +72,26 @@ class FileLoad {
    }// Commented out for since DIVs can no longer be accessed by Imageloader
    */
   //
-  void SongLoader (String[] files) {
-    minim = new Minim(this);
-    SongPlayList = new AudioPlayer[FileCount];
-    int fileNumber=0;
-    while ( fileNumber < FileCount ) {
-      SongPlayList[fileNumber] = minim.loadFile(files[fileNumber]);
+  void SongLoader(String[] files) {
+    if (files == null || files.length == 0) {
+      println("ERROR: No files provided to SongLoader.");
+      return; // Exit the method
+    }
+
+    FileCount = files.length; // Set FileCount to the number of files
+    SongPlayList = new AudioPlayer[FileCount]; // Initialize the SongPlayList array
+    int fileNumber = 0;
+
+    while (fileNumber < FileCount) { // Loop through the files
+      SongPlayList[fileNumber] = minim.loadFile(files[fileNumber]); // Load each file
+      if (SongPlayList[fileNumber] != null) {
+        println("Loaded song: " + files[fileNumber]); // Debugging output
+      } else {
+        println("ERROR: Failed to load song: " + files[fileNumber]);
+      }
       fileNumber++;
     }
-  }//
+  }
 }
 ////
 //
