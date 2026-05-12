@@ -5,6 +5,7 @@ class FileLoad {
  This is for void Setup in main Program
    Make Images pop up in div=3
    */
+   
   int FileCount = 0;
   int CurrentFile = FileCount - FileCount;
   int numberOfSongs = 8; //Best Practice
@@ -52,10 +53,11 @@ class FileLoad {
     //First Time Only
     if (FileCount==0) {
       FileCount = files.length; //Global Used for both music and images, populated once.
-      ImagesLoader( files );
+      //ImagesLoader( files );
     }
   }//
   //
+  /*
   void ImagesLoader(String[] files) {
     imagesPlayList = new PImage[FileCount]; //sets the array length
     int fileNumber=0;
@@ -64,8 +66,9 @@ class FileLoad {
       //ErrorCheck("Verifying Width & Height of Loaded Images, see imageLoading() in File Loading", imagesPlayList[fileNumber].width, imagesPlayList[fileNumber].height );
       fileNumber++; //functions similar to FOR
     }
-    //checkLoadImage(); //See Image
-  }//
+    checkLoadImage(); //See Image
+  }// Commented out for since DIVs can no longer be accessed by Imageloader
+  */ 
   //
   void SongLoader (String[] files) {
     minim = new Minim(this);

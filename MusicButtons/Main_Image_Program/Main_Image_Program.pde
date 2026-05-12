@@ -21,8 +21,8 @@ void setup() {
   //
   DivsMusicPlayer = new MusicPlayer(16);
   DivsMusicPlayer.seeQuitMusicButton();
-  //MusicButtonsSetup( 6, divs[6], divs[6], divs[2]/13);
-  //LoadFile();
+  //MusicButtonsSetup( 6, divs[6], divs[6], divs[2]/13)
+  
   //FontSetup();
   ////
   //DrawingText( font, fontSize, title,       );
