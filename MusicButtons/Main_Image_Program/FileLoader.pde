@@ -1,16 +1,17 @@
 class FileLoad {
-
   //Global Variables
-  /*
- This is for void Setup in main Program
-   Make Images pop up in div=3
-   */
-   
   int FileCount = 0;
   int CurrentFile = FileCount - FileCount;
   int numberOfSongs = 8; //Best Practice
   AudioPlayer[] SongPlayList = new AudioPlayer[ numberOfSongs ];
   AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
+  //
+  FileLoad() {
+  }
+  /*
+ This is for void Setup in main Program
+   Make Images pop up in div=3
+   */
   //
   PImage[] imagesPlayList;
   //
@@ -59,16 +60,16 @@ class FileLoad {
   //
   /*
   void ImagesLoader(String[] files) {
-    imagesPlayList = new PImage[FileCount]; //sets the array length
-    int fileNumber=0;
-    while ( fileNumber < FileCount ) {
-      imagesPlayList[ fileNumber ] = loadImage( files[ fileNumber ] );
-      //ErrorCheck("Verifying Width & Height of Loaded Images, see imageLoading() in File Loading", imagesPlayList[fileNumber].width, imagesPlayList[fileNumber].height );
-      fileNumber++; //functions similar to FOR
-    }
-    checkLoadImage(); //See Image
-  }// Commented out for since DIVs can no longer be accessed by Imageloader
-  */ 
+   imagesPlayList = new PImage[FileCount]; //sets the array length
+   int fileNumber=0;
+   while ( fileNumber < FileCount ) {
+   imagesPlayList[ fileNumber ] = loadImage( files[ fileNumber ] );
+   //ErrorCheck("Verifying Width & Height of Loaded Images, see imageLoading() in File Loading", imagesPlayList[fileNumber].width, imagesPlayList[fileNumber].height );
+   fileNumber++; //functions similar to FOR
+   }
+   checkLoadImage(); //See Image
+   }// Commented out for since DIVs can no longer be accessed by Imageloader
+   */
   //
   void SongLoader (String[] files) {
     minim = new Minim(this);

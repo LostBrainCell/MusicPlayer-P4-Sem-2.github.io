@@ -9,6 +9,7 @@ import ddf.minim.ugens.*;
 import java.io.File;
 //
 MusicPlayer DivsMusicPlayer;
+FileLoad FileIsLoading;
 //
 Minim minim;
 int appWidth, appHeight;
@@ -22,7 +23,6 @@ void setup() {
   DivsMusicPlayer = new MusicPlayer(16);
   DivsMusicPlayer.seeQuitMusicButton();
   //MusicButtonsSetup( 6, divs[6], divs[6], divs[2]/13)
-  
   //FontSetup();
   ////
   //DrawingText( font, fontSize, title,       );
