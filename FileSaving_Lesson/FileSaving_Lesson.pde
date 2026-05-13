@@ -42,7 +42,7 @@ void setup() {
   saveTxtPath_currentSong = sketchPath("currentSong.txt");
   saveTxtPath_randomStart = sketchPath("randomStart.txt");
   //
-  musicload();
+  MusicLoad();
   //
   playList[ currentSong ].play(); //Auto Start Music Player
   //

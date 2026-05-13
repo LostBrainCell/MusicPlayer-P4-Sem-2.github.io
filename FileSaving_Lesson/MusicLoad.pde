@@ -1,5 +1,5 @@
 //
-void musicload() {
+void MusicLoad() {
   minim = new Minim(this);
   //String Sketch = sketchPath();
   String open = "../" ;
