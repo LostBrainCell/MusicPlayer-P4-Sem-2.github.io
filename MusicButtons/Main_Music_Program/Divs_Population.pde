@@ -92,24 +92,31 @@ class MusicPlayer {
     for ( int i=4; i<divs.length; i++) { //CAUTION: i=4 until above rewritten
       if ( i%4==0 && int(i/4)==1 ) {
         divs[i] = poly( 1, appWidth, -1, referent ); //appWidth-referent
-      } else if ( i%4==0 && int(i/4)==2 ) {
+      } else if ( i%4==0 && int(i/4)==2 ) { //int(i/4)==2 is the Music Player Button
         divs[i] = appWidth*0;
-      } else if ( i%4==0 && int(i/4)==3 ) {
+      } else if ( i%4==0 && int(i/4)==3 ) { //int(i/4)==3 TextHeight Box
         divs[i] = column[0];
-      } else if ( i%4==0 && (int(i/4)==14 || int(i/4)==15) ) {
+      } else if ( i%4==0 && (int(i/4)==14 || int(i/4)==15) ) { //(int(i/4)==14 || int(i/4)==15) Text Height Box
         divs[i] = column[5];
         //
         //Note: WHILE below not even tested if above if is executed
       } else if ( (i%4==0 || i%4==1) && ( int(i/4)>=a || int(i/4)<=8 ) ) {
-        while ( b<5 ) {
+        while ( b<5 ) { // This Represents Top Row of Buttons
           divs[(a*a)+(a*b)] = column[b];
           divs[ ((a*a)+(a*b)) + 1 ] = row[1];
           //
           //println(a, b, (a*a)+(a*b), ((a*a)+(a*b))+1, column[b], divs[(a*a)+(a*b)], divs[ ((a*a)+(a*b)) + 1 ]);
           b++; //CAUTION: do not reset once used
+          // Draw a small square when a = 4
+          //if ( (i%4==0 || i%4==1) && ( int(i/4)>=a || int(i/4)<=4 ) ) {
+          //  float x = column[b] + 10; // Offset the small square slightly
+          //  float y = row[1] + 10;    // Offset the small square slightly
+          //  float size = 20;          // Size of the small square
+          //  square(x, y, size);       // Draw the small square
+          //}
         }
       } else if ( (i%4==0 || i%4==1) && int(i/4)>=9 || int(i/4)<=13 ) {
-        while ( d<5 ) {
+        while ( d<5 ) { // This Represents Bottom row of Buttons
           divs[(c*a)+(a*d)] = column[d];
           divs[ ((c*a)+(a*d)) + 1 ] = row[2];
           //
@@ -219,35 +226,35 @@ class MusicPlayer {
 
 
 /* Note this Code is not usefull since DIVs is a class for now
-//Buttons
-int checkNum (int i) {
-  if ( i >= FileCount ) {
-    CurrentFile = 0;
-  } else if ( i <= -1 ) {
-    i = 0;
-  }
-  return i;
-}
-int loopVar( int i ) {
-  if ( i < FileCount ) {
-    i++;
-  } else if ( i == FileCount ) {
-    CurrentFile = 0;
-  } else if ( i == -1 ) {
-    i = 0;
-  }
-  checkNum (i);
-  return i;
-}//End Next
-int loopVar( int i, int total ) {
-  if ( i < total ) {
-    i++;
-  } else if ( i == total ) {
-    CurrentFile = 0;
-  } else if ( i == -1 ) {
-    i = 0;
-  }
-  checkNum (i);
-  return i;
-}//End Next
-*/
+ //Buttons
+ int checkNum (int i) {
+ if ( i >= FileCount ) {
+ CurrentFile = 0;
+ } else if ( i <= -1 ) {
+ i = 0;
+ }
+ return i;
+ }
+ int loopVar( int i ) {
+ if ( i < FileCount ) {
+ i++;
+ } else if ( i == FileCount ) {
+ CurrentFile = 0;
+ } else if ( i == -1 ) {
+ i = 0;
+ }
+ checkNum (i);
+ return i;
+ }//End Next
+ int loopVar( int i, int total ) {
+ if ( i < total ) {
+ i++;
+ } else if ( i == total ) {
+ CurrentFile = 0;
+ } else if ( i == -1 ) {
+ i = 0;
+ }
+ checkNum (i);
+ return i;
+ }//End Next
+ */
