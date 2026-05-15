@@ -107,13 +107,6 @@ class MusicPlayer {
           //
           //println(a, b, (a*a)+(a*b), ((a*a)+(a*b))+1, column[b], divs[(a*a)+(a*b)], divs[ ((a*a)+(a*b)) + 1 ]);
           b++; //CAUTION: do not reset once used
-          // Draw a small square when a = 4
-          //if ( (i%4==0 || i%4==1) && ( int(i/4)>=a || int(i/4)<=4 ) ) {
-          //  float x = column[b] + 10; // Offset the small square slightly
-          //  float y = row[1] + 10;    // Offset the small square slightly
-          //  float size = 20;          // Size of the small square
-          //  square(x, y, size);       // Draw the small square
-          //}
         }
       } else if ( (i%4==0 || i%4==1) && int(i/4)>=9 || int(i/4)<=13 ) {
         while ( d<5 ) { // This Represents Bottom row of Buttons
