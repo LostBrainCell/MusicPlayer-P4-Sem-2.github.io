@@ -12,21 +12,20 @@ class Buttons {
   //
   //
   void MusicButtonDivs() {
-    MusicPlayerX = appWidth/4;
-    MusicPlayerY = appHeight/4;
-    MusicPlayerWidth = appWidth*1/2;
+    MusicPlayerX = appWidth/4; //
+    MusicPlayerY = appHeight/4; // 
+    MusicPlayerWidth = appWidth*1/2; 
     MusicPlayerHeight = appHeight*1/2;
-    ButtonSize = MusicPlayerWidth*1/13 ; // number of buttons in a row + 2xPadding and the square itself
-    for ( int i=1; i<musicButtonDivX.length; i++ ) {
-      musicButtonDivX[i]  = ButtonSize*i;
-    }
+    ButtonSize = MusicPlayerWidth*1/13 ; // number of buttons in a row and represents the columns and rows
+    
     // Separater
   }
   //
   //
-  void drawMusicButtons( float x, float y, float w, float h ) {
-    rect( x, y, w, h );
-  }//
+  
+  
+  
+  
   void  musicSymbol( int index, float divX, float divY, float divDimension ) {
     divX = divX + divDimension*1/4;
     divY = divY + divDimension*1/4;
