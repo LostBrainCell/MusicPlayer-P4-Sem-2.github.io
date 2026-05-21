@@ -1,10 +1,11 @@
+/*
 class Buttons {
-  /* Notes
-   -
-   -
-   -
-   -
-   */
+   //Notes
+   //-
+   //-
+   //-
+   //-
+   
   //Global Variables
   int randomButtonDimension, MusicPlayerX, MusicPlayerY, MusicPlayerWidth, MusicPlayerHeight, ButtonSize, numberOfButtons=10 ;
   float[] musicButtonDivX = new float[numberOfButtons];
@@ -109,4 +110,5 @@ class Buttons {
   //void smallTriangle ( int index, float divX, float divY, float divDimension ) {
   //  //triangle( divX, divY,
   //}//
-}
+}//
+*/
