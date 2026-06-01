@@ -22,7 +22,8 @@ void setup() {
   //
   DivsMusicPlayer = new MusicPlayer(16);
   DivsMusicPlayer.seeQuitMusicButton();
-  FileLoader = new FileLoad();
+  minim = new Minim(this); // Initialize Minim
+  FileLoader = new FileLoad(minim);
   FileLoader.LoadFile();
   //MusicButtonsSetup( 6, divs[6], divs[6], divs[2]/13)
   //FontSetup();

@@ -3,13 +3,20 @@ class FileLoad {
   int FileCount = 0;
   int CurrentFile = FileCount - FileCount;
   int numberOfSongs = 8; //Best Practice
+  int numberOfSoundEffects = 4; //Best Practice
   AudioPlayer[] SongPlayList = new AudioPlayer[ numberOfSongs ];
+  AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
   AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
+  Minim minim;
   //
-  FileLoad() {
+  FileLoad(Minim minim) {
+    this.minim = minim; // Assign the passed Minim object
     FileCount = 0;
     CurrentFile = 0;
+    //numberOfSongs = 8; //Best Practice
+    //numberOfSoundEffects = 4; //Best Practice
     SongPlayList = new AudioPlayer[numberOfSongs];
+    AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
     playListMetaData = new AudioMetaData[numberOfSongs];
     imagesPlayList = new PImage[numberOfSongs]; // Initialize image array
   }
@@ -21,6 +28,7 @@ class FileLoad {
   PImage[] imagesPlayList;
   //
   void LoadFile() {
+    minim = new Minim(this);
     String Open = "../"; //Exit out of current folder
     String DependanciesFolder = "Dependancies/";
     //String ImagesFolder = "Images/";
@@ -33,6 +41,8 @@ class FileLoad {
     String OldMusicFolder = "OldMusic/";
     //String MusicFolderPath = sketchPath( Open + Open + DependanciesFolder + MusicFolder );
     String OldMusicFolderPath = sketchPath( Open + Open + DependanciesFolder + OldMusicFolder );
+    String SoundEffectsFolder = "/SoundEffects";
+    String SoundEffectsFolderPath = sketchPath( Open + Open + DependanciesFolder + SoundEffectsFolder );
     //////
     //FileCheck(MusicFolderPath);
     FileCheck(OldMusicFolderPath);
@@ -61,6 +71,7 @@ class FileLoad {
     if (FileCount==0) {
       FileCount = files.length; //Global Used for both music and images, populated once.
       //ImagesLoader( files );
+      SongLoader(files);
     }
   }//
   //
@@ -82,11 +93,9 @@ class FileLoad {
       println("ERROR: No files provided to SongLoader.");
       return; // Exit the method
     }
-
     FileCount = files.length; // Set FileCount to the number of files
     SongPlayList = new AudioPlayer[FileCount]; // Initialize the SongPlayList array
     int fileNumber = 0;
-
     while (fileNumber < FileCount) { // Loop through the files
       SongPlayList[fileNumber] = minim.loadFile(files[fileNumber]); // Load each file
       if (SongPlayList[fileNumber] != null) {
@@ -95,6 +104,13 @@ class FileLoad {
         println("ERROR: Failed to load song: " + files[fileNumber]);
       }
       fileNumber++;
+    }
+    // Automatically play the first song in the playlist
+    if (FileCount > 0 && SongPlayList[0] != null) {
+      println("Playing first song: " + files[0]);
+      SongPlayList[0].play(); // Play the first song
+    } else {
+      println("ERROR: No valid songs to play.");
     }
   }
   void keyPressed() {
