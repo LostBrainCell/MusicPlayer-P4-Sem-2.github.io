@@ -10,11 +10,11 @@ CMP SC 30
 - [X] DIVs is the main PDE file im working on and DIVs is a reference for what I'm doing in Arithmethic (Rectangles)
 - [X] Image Program (WIP)
 - [X] Text Review (Turn DIVs into Text boxes)
-- [ ] Music Load in Main Msuic Program
+- [X] Music Load in Main Msuic Program
 - [ ] Music Symbols in Main Music Program 
 - [ ] Text in Main Music Program
 - [ ] FileSaving in Main Music Program
-- [ ] Add Inspect MetaData
+- [X] Add Inspect MetaData
 
 
 ---
