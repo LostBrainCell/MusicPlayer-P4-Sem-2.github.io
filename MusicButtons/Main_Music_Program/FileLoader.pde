@@ -28,7 +28,6 @@ class FileLoad {
   PImage[] imagesPlayList;
   //
   void LoadFile() {
-    minim = new Minim(this);
     String Open = "../"; //Exit out of current folder
     String DependanciesFolder = "Dependancies/";
     //String ImagesFolder = "Images/";
@@ -155,8 +154,6 @@ class FileLoad {
         SongPlayList[FileCount].mute();
       }
     }
-    if ( key==CODED || keyCode==ESC ) exit(); // QUIT //UP
-    if ( key=='Q' || key=='q' ) exit(); // QUIT
     //
     if ( key=='N' || key=='n' ) { // NEXT //See .txt for starter hint
       if ( SongPlayList[FileCount].isPlaying() ) {

@@ -51,6 +51,7 @@ void mousePressed() {
 //
 void keyPressed() {
   DivsMusicPlayer.keyPressed();
+  FileLoader.keyPressed();
 }//End Mouse Return
 //
 //End MAIN Program
