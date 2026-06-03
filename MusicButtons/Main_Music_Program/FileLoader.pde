@@ -104,13 +104,15 @@ class FileLoad {
       }
       fileNumber++;
     }
+    FileCount=0; //To Prevent Array Index Bounds Error or something// no touchy/remove
+    
     // Automatically play the first song in the playlist
-    if (FileCount > 0 && SongPlayList[0] != null) {
-      println("Playing first song: " + files[0]);
-      SongPlayList[0].play(); // Play the first song
-    } else {
-      println("ERROR: No valid songs to play.");
-    }
+    //if (FileCount > 0 && SongPlayList[0] != null) {
+    //  println("Playing first song: " + files[0]);
+    //  //SongPlayList[0].play(); // Play the first song
+    //} else {
+    //  println("ERROR: No valid songs to play.");
+    //}
   }
   void keyPressed() {
     if ( key=='P' || key=='p' ) SongPlayList[FileCount].loop(0); //Simple Play, double tap possible
