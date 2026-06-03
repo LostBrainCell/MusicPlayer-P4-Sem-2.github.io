@@ -97,6 +97,7 @@ class FileLoad {
     int fileNumber = 0;
     while (fileNumber < FileCount) { // Loop through the files
       SongPlayList[fileNumber] = minim.loadFile(files[fileNumber]); // Load each file
+      playListMetaData[ fileNumber ] = SongPlayList[ fileNumber ].getMetaData();
       if (SongPlayList[fileNumber] != null) {
         println("Loaded song: " + files[fileNumber]); // Debugging output
       } else {
@@ -105,7 +106,7 @@ class FileLoad {
       fileNumber++;
     }
     FileCount=0; //To Prevent Array Index Bounds Error or something// no touchy/remove
-    
+
     // Automatically play the first song in the playlist
     //if (FileCount > 0 && SongPlayList[0] != null) {
     //  println("Playing first song: " + files[0]);
@@ -113,6 +114,7 @@ class FileLoad {
     //} else {
     //  println("ERROR: No valid songs to play.");
     //}
+    inspectmetadata(playListMetaData);
   }
   void keyPressed() {
     if ( key=='P' || key=='p' ) SongPlayList[FileCount].loop(0); //Simple Play, double tap possible
