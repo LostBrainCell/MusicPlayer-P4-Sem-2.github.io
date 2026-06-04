@@ -33,7 +33,7 @@ class Buttons {
     divDimension = divDimension*1/2;
     //
     if ( index==1 || index==2 || index==7 || index==8 ) {
-      if ( index==1 || index==2 || index==7 || index==8 ) drawMusicDivs( divX, divY, divDimension ); // Squares inside buttons
+      if ( index==1 || index==2 || index==7 || index==8 ) drawMusicDivs( divX, divY,/ divDimension ); // Squares inside buttons
       if ( index==7 || index==8 ) {
         WideTriangle( 9, divX+SmallerDimensionValue( divDimension*7/4 ), divY-divDimension*1/8, divDimension/4);
       }
