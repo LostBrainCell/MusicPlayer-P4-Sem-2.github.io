@@ -37,6 +37,7 @@ void draw() {
   //ErrorCheck("draw() Music GUI set:", musicGUI);
   if ( DivsMusicPlayer.musicGUI==true ) {
     DivsMusicPlayer.draw();
+
     //imageDrawing( imagesPlayList[1], 12 ); //imageDrawingAspectRatio
     //imageDrawingAspectRatio( imagesPlayList[0], 13 ); //imageDrawing
   } else {
@@ -51,7 +52,9 @@ void mousePressed() {
 //
 void keyPressed() {
   DivsMusicPlayer.keyPressed();
-  FileLoader.keyPressed();
+  if ( DivsMusicPlayer.musicGUI==true ) { //Make Sure Buttons only work if Music Player is initialized
+    FileLoader.keyPressed();
+  }
 }//End Mouse Return
 //
 //End MAIN Program
