@@ -152,7 +152,7 @@ class MusicPlayer {
       //
       //ErrorCheck("Inside FOR, Checking index and DIV-var",  i, divs[i]);
     }
-    //ErrorCheck("Inspect DIVs Array", divs);
+    ErrorCheck("Inspect DIVs Array", divs);
   }//End DIVs
   //
   void buildingRow(float[] row, float textHeight, float referent) {

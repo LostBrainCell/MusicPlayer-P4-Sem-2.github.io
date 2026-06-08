@@ -74,7 +74,7 @@ class FileLoad {
     }
   }//
   //
-  /*
+  /* Commented Out since unneccesary for MS Player
   void ImagesLoader(String[] files) {
    imagesPlayList = new PImage[FileCount]; //sets the array length
    int fileNumber=0;

@@ -1,6 +1,5 @@
 /*
-Note fix this program IE turn it into a Class alongside Divs Population
-Cause it can't get the values
+Note: Commented Out for now
 */
 
 
